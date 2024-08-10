@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename)
 // const pathSrc = path.resolve(__dirname, 'src')
 
 export default defineConfig({
-  base: '/Resume', // 根目錄從指定的資料夾開始
+  base: process.env.VITE_ROOT_PATH, // 根目錄從指定的資料夾開始
   plugins: [
     vue(),
     AutoImport({

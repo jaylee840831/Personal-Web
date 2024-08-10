@@ -27,7 +27,7 @@
 <style scoped>
   .headerContainer{
     padding: 5px 20px;
-    background-color: blue;
+    background-color: #37D0EE;
   }
   :deep .el-page-header__back {
     display: none; /* 隱藏返回按鈕 */

@@ -12,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   // path需要跟vite.config.ts的base一致
-  history: createWebHistory(import.meta.env.VITE_ROOT_PATH),
+  history: createWebHistory('/Resume'),
   routes
 });
 

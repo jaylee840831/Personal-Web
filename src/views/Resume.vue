@@ -17,7 +17,7 @@
         <div style="width: 100%; display: flex; justify-content: center;">
           <el-avatar
             :size="headShotSize"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+            src="images/user.png"
           />
         </div>
         <el-sub-menu index="1">
@@ -67,8 +67,8 @@
     DArrowRight
   } from '@element-plus/icons-vue'
 
-  const isCollapse = ref(true)
-  const headShotSize = ref(36)
+  const isCollapse = ref(false)
+  const headShotSize = ref(150)
   const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
   }
@@ -78,7 +78,7 @@
 
   watch(() => isCollapse.value, (newValue) => {
     if (newValue) headShotSize.value = 36
-    else headShotSize.value = 120
+    else headShotSize.value = 150
   }, { deep: true })
 </script>
 
@@ -88,6 +88,7 @@
     flex-direction: row;
   }
   .resumeGuideBar{
+    margin-top: 2px;
   }
   .resumeContainer{
     width: 100%;
@@ -95,7 +96,6 @@
   }
   .el-menu-vertical-demo {
     height: 100vh;
-    /* background-color: black; */
   }
   .el-icon {
     cursor: pointer;

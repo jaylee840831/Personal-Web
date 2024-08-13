@@ -11,7 +11,7 @@
               <img src="../../public/images/basket.png">
             </div>
           </div>
-          <el-menu default-active="0" class="routerMenu" mode="horizontal">
+          <el-menu :default-active="currentActive" class="routerMenu" mode="horizontal">
             <el-menu-item
               v-for="(r, index) in routerList" :key="index"
               :index="index.toString()"
@@ -24,13 +24,35 @@
       </template>
       <template #extra>
         <div class="headerContent headerButton">
-          <i
-            class="bi bi-globe"
-            style="font-size: 24px; cursor: pointer; margin-right: 20px;">
-          </i>
+          <!-- 多國語系 -->
+          <el-dropdown trigger="click" @command="handleLanguageCommand">
+            <div class="dropdownTitle">
+              <i class="bi bi-globe"
+                style="font-size: 24px; margin-right: 10px;">
+              </i>
+              <span>
+                {{ translateLanguage(currentLanguage) }}
+              </span>
+            </div>
+            <template v-slot:dropdown>
+              <div class="dropdownContent">
+                <el-dropdown-menu v-for="item in languageList" :key="item">
+                  <el-dropdown-item :command="item.shortName">
+                    <span
+                      :class="
+                        {'menuLinkActive': currentLanguage === item.shortName}
+                      ">
+                      {{ item.name }}
+                    </span>
+                  </el-dropdown-item>
+                </el-dropdown-menu>
+              </div>
+            </template>
+          </el-dropdown>
           <el-switch
             v-model="isDark"
             inline-prompt
+            style="margin-left: 20px; display: none;"
           >
             <template #active-action>
               <i class="bi bi-moon-fill" style="color:#313339"></i>
@@ -46,12 +68,25 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useDark } from '@vueuse/core'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const { t } = useI18n()
-const isDark = ref(false)
+const isDark = useDark(
+  {
+    selector: 'body',
+    attribute: 'data-theme',
+    valueDark: 'dark',
+    valueLight: 'light'
+    // disableTransition: false
+  }
+)
+const languageList = ref([
+  {shortName: 'en', name: t('i18n.language.en')},
+  {shortName: 'tw', name: t('i18n.language.tw')}
+])
 const routerList = ref([
   {
     name: t('i18n.router.about'),
@@ -62,6 +97,37 @@ const routerList = ref([
     pathName: 'Contact'
   },
 ])
+
+const currentActive = computed<string>(() => {
+  for(let i = 0; i < routerList.value.length; i++) {
+    if (routerList.value[i].pathName === router.currentRoute.value.name) {
+      return i.toString()
+    }
+  }
+
+  return '0'
+})
+
+const currentLanguage = computed<string>(() => {
+  return sessionStorage.getItem('language')!
+})
+
+// 多國語系切換
+function handleLanguageCommand (lang: string) {
+  sessionStorage.setItem('language', lang)
+  location.reload()
+}
+
+function translateLanguage (language: string) {
+  switch (language) {
+  case 'en':
+    return 'EN'
+  case 'tw':
+    return '繁中'
+  default:
+    return ''
+  }
+}
 
 function handleClick (event: MouseEvent) {
   const buttons = document.getElementsByClassName('headerButton') as HTMLCollectionOf<HTMLDivElement>
@@ -96,10 +162,10 @@ onUnmounted(() => {
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .headerContainer{
     padding: 5px 20px;
-    background-color: #F57C00;
+    background-color: var(--secondaryDarkColor) !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   :deep .el-page-header__back {
@@ -156,13 +222,13 @@ onUnmounted(() => {
   .routerMenu {
     min-width: 300px !important;
     max-width: 600px !important;
-    background-color: #F57C00;
-    border-bottom: 1px solid #F57C00 !important;
+    background-color: var(--secondaryDarkColor);
+    border-bottom: 1px solid var(--secondaryDarkColor) !important;
   }
 
   .routerMenu .el-menu-item.is-active {
     color: black !important;
-    border-bottom: 2px solid  #F9AE66  !important;
+    border-bottom: 2px solid  var(--secondaryLightColor)  !important;
   }
 
   .routerMenu .el-menu-item {
@@ -170,9 +236,30 @@ onUnmounted(() => {
     color: black !important;
   }
   .routerMenu .el-menu-item:hover {
-    background-color: #F9AE66 !important;
+    background-color: var(--secondaryLightColor) !important;
     color: black !important;
     border-radius: 5px;
+  }
+
+  .dropdownTitle{
+    width: 70px;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    align-items: center;
+    padding: 17px 10px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .dropdownTitle:hover{
+    background-color: var(--secondaryLightColor);
+    border-radius: 5px;
+  }
+
+  .menuLinkActive{
+    color: var(--secondaryDarkColor);
   }
 
   @keyframes shoot {

@@ -3,6 +3,10 @@
     "router": {
       "about": "About",
       "contact": "Contact"
+    },
+    "language": {
+      "en": "English",
+      "tw": "繁體中文"
     }
   }
 }

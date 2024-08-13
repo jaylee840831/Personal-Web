@@ -88,7 +88,6 @@
     flex-direction: row;
   }
   .resumeGuideBar{
-    margin-top: 2px;
   }
   .resumeContainer{
     width: 100%;

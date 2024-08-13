@@ -2,4 +2,40 @@ html body{
   margin: 0px;
   padding: 0px;
   overflow: hidden;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+// 主色
+$primaryColor:#ffffff;
+$primaryDarkColor:#000000;
+// 副主色
+$secondaryDarkColor: #F57C00;
+$secondaryLightColor: #F9AE66;
+// 文字色
+$textColor: #606266;
+$textDarkColor: #ffffff;
+// 背景色
+$primaryBackgroundColor: #ededed;
+$primaryBackgroundDarkColor: #000000;
+
+// 亮色系主題
+[data-theme="light"] {
+  background-color: $primaryBackgroundColor;
+  color: $textColor;
+
+  --secondaryDarkColor: #F57C00;
+  --secondaryLightColor: #F9AE66;
+  // --filterBarBackgroundColor:#ffffff;
+  // --filterBarTextColor:#606266;
+}
+
+// 暗色系主題
+[data-theme="dark"] {
+  background-color: $primaryBackgroundDarkColor;
+  color: $textDarkColor;
+
+  --secondaryDarkColor: #F57C00;
+  --secondaryLightColor: #F9AE66;
+  // --filterBarBackgroundColor:#242529;
+  // --filterBarTextColor:#ffffff;
 }

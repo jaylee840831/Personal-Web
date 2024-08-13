@@ -89,7 +89,7 @@ const languageList = ref([
 ])
 const routerList = ref([
   {
-    name: t('i18n.router.about'),
+    name: t('i18n.router.resume'),
     pathName: 'Resume'
   },
   {
@@ -97,16 +97,16 @@ const routerList = ref([
     pathName: 'Contact'
   },
 ])
+const currentActive = ref('0')
 
-const currentActive = computed<string>(() => {
+watch(() => router.currentRoute.value.name, (newValue) => {
   for(let i = 0; i < routerList.value.length; i++) {
-    if (routerList.value[i].pathName === router.currentRoute.value.name) {
-      return i.toString()
+    if (routerList.value[i].pathName === newValue) {
+      currentActive.value = i.toString()
+      break
     }
   }
-
-  return '0'
-})
+}, { deep: true })
 
 const currentLanguage = computed<string>(() => {
   return sessionStorage.getItem('language')!

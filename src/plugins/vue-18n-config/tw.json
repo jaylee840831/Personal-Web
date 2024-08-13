@@ -1,12 +1,21 @@
 {
   "i18n":{
     "router": {
-      "about": "關於",
+      "resume": "履歷",
       "contact": "聯繫方式"
     },
     "language": {
       "en": "English",
       "tw": "繁體中文"
+    },
+    "resume": {
+      "about": "關於我",
+      "education": "教育背景",
+      "skills": "技能",
+      "experience": "工作經歷",
+      "portfolio": "作品集",
+      "achievements": "成就",
+      "hobbits": "興趣"
     }
   }
 }

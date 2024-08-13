@@ -1,12 +1,21 @@
 {
   "i18n":{
     "router": {
-      "about": "About",
+      "resume": "Resume",
       "contact": "Contact"
     },
     "language": {
       "en": "English",
       "tw": "繁體中文"
+    },
+    "resume": {
+      "about": "About",
+      "education": "Education",
+      "skills": "Skills",
+      "experience": "Experience",
+      "portfolio": "Portfolio",
+      "achievements": "Achievements",
+      "hobbits": "Hobbits"
     }
   }
 }

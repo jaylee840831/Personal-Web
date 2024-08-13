@@ -8,67 +8,81 @@
         @open="handleOpen"
         @close="handleClose"
       >
+        <!-- 收合menu -->
         <div style="width: 100%; display: flex; justify-content: flex-end;">
-          <el-icon @click="isCollapse = !isCollapse" size="large">
-            <DArrowLeft v-show="!isCollapse"/>
-            <DArrowRight v-show="isCollapse"/>
-          </el-icon>
+          <i :class="arrowIcon" @click="isCollapse = !isCollapse"></i>
         </div>
+        <!-- 大頭照 -->
         <div style="width: 100%; display: flex; justify-content: center;">
           <el-avatar
             :size="headShotSize"
             src="images/user.png"
           />
         </div>
-        <el-sub-menu index="1">
+        <el-menu-item index="1">
+          <img src="../../public/images/resume/about_me.png"/>
           <template #title>
-            <el-icon><location /></el-icon>
-            <span>Navigator One</span>
+            {{ t('i18n.resume.about') }}
           </template>
-          <el-menu-item-group>
-            <template #title><span>Group One</span></template>
-            <el-menu-item index="1-1">item one</el-menu-item>
-            <el-menu-item index="1-2">item two</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="Group Two">
-            <el-menu-item index="1-3">item three</el-menu-item>
-          </el-menu-item-group>
-          <el-sub-menu index="1-4">
-            <template #title><span>item four</span></template>
-            <el-menu-item index="1-4-1">item one</el-menu-item>
-          </el-sub-menu>
-        </el-sub-menu>
-        <el-menu-item index="2">
-          <el-icon><icon-menu /></el-icon>
-          <template #title>Navigator Two</template>
         </el-menu-item>
-        <el-menu-item index="3" disabled>
-          <el-icon><document /></el-icon>
-          <template #title>Navigator Three</template>
+        <el-menu-item index="2">
+          <img src="../../public/images/resume/education.png"/>
+          <template #title>
+            {{ t('i18n.resume.education') }}
+          </template>
+        </el-menu-item>
+        <el-menu-item index="3">
+          <img src="../../public/images/resume/skill.png"/>
+          <template #title>
+            {{ t('i18n.resume.skills') }}
+          </template>
         </el-menu-item>
         <el-menu-item index="4">
-          <el-icon><setting /></el-icon>
-          <template #title>Navigator Four</template>
+          <img src="../../public/images/resume/experience.png"/>
+          <template #title>
+            {{ t('i18n.resume.experience') }}
+          </template>
         </el-menu-item>
+        <el-menu-item index="5">
+          <img src="../../public/images/resume/portfolio.png"/>
+          <template #title>
+            {{ t('i18n.resume.portfolio') }}
+          </template>
+        </el-menu-item>
+        <el-menu-item index="6">
+          <img src="../../public/images/resume/achievement.png"/>
+          <template #title>
+            {{ t('i18n.resume.achievements') }}
+          </template>
+        </el-menu-item>
+        <el-menu-item index="7">
+          <img src="../../public/images/resume/hobbit.png"/>
+          <template #title>
+            {{ t('i18n.resume.hobbits') }}
+          </template>
+        </el-menu-item>
+        <el-sub-menu index="8" style="visibility: hidden;">
+          <template #title>
+            <el-icon><location /></el-icon>
+            <span>empty</span>
+          </template>
+        </el-sub-menu>
       </el-menu>
     </div>
     <div class="resumeContainer">
+      <ResumeContent/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import {
-    Document,
-    Menu as IconMenu,
-    Location,
-    Setting,
-    DArrowLeft,
-    DArrowRight
-  } from '@element-plus/icons-vue'
+  import { useI18n } from 'vue-i18n'
+  import ResumeContent from '@/components/ResumeContent.vue';
 
+  const { t } = useI18n()
   const isCollapse = ref(false)
   const headShotSize = ref(150)
+  const arrowIcon = ref('bi bi-chevron-double-left')
   const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
   }
@@ -77,8 +91,14 @@
   }
 
   watch(() => isCollapse.value, (newValue) => {
-    if (newValue) headShotSize.value = 36
-    else headShotSize.value = 150
+    if (newValue) {
+      headShotSize.value = 36
+      arrowIcon.value = 'bi bi-chevron-double-right'
+    }
+    else {
+      headShotSize.value = 150
+      arrowIcon.value = 'bi bi-chevron-double-left'
+    }
   }, { deep: true })
 </script>
 
@@ -86,6 +106,14 @@
   .resume{
     display: flex;
     flex-direction: row;
+
+    i{
+      cursor: pointer;
+    }
+    img{
+      width: 24px;
+      margin-right: 10px;
+    }
   }
   .resumeGuideBar{
   }
@@ -95,8 +123,5 @@
   }
   .el-menu-vertical-demo {
     height: 100vh;
-  }
-  .el-icon {
-    cursor: pointer;
   }
 </style>

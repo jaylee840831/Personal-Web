@@ -90,7 +90,7 @@
     console.log(key, keyPath)
   }
 
-  watch(() => isCollapse.value, (newValue) => {
+  watch(() => isCollapse.value, (newValue: boolean) => {
     if (newValue) {
       headShotSize.value = 36
       arrowIcon.value = 'bi bi-chevron-double-right'

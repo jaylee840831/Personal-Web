@@ -3,6 +3,7 @@
     <el-page-header :icon="null" class="headerContainer">
       <template #content>
         <div class="headerContent">
+          <i class="bi bi-list drawerButton" @click="drawer = true"></i>
           <div class="animation-container">
             <div class="ball bounce">
               <img src="../../public/images/ball.png">
@@ -11,7 +12,12 @@
               <img src="../../public/images/basket.png">
             </div>
           </div>
-          <el-menu :default-active="currentActive" class="routerMenu" mode="horizontal">
+          <!-- 平板、電腦版router menu -->
+          <el-menu
+            :default-active="currentActive"
+            class="routerMenu"
+            mode="horizontal"
+          >
             <el-menu-item
               v-for="(r, index) in routerList" :key="index"
               :index="index.toString()"
@@ -28,7 +34,7 @@
           <el-dropdown trigger="click" @command="handleLanguageCommand">
             <div class="dropdownTitle">
               <i class="bi bi-globe"
-                style="font-size: 24px; margin-right: 10px;">
+                style="margin-right: 10px;">
               </i>
               <span>
                 {{ translateLanguage(currentLanguage) }}
@@ -36,23 +42,19 @@
             </div>
             <template v-slot:dropdown>
               <div class="dropdownContent">
-                <el-dropdown-menu v-for="item in languageList" :key="item">
-                  <el-dropdown-item :command="item.shortName">
-                    <span
-                      :class="
-                        {'menuLinkActive': currentLanguage === item.shortName}
-                      ">
-                      {{ item.name }}
-                    </span>
-                  </el-dropdown-item>
-                </el-dropdown-menu>
+                <el-dropdown-item v-for="item in languageList" :key="item" :command="item.shortName">
+                  <span :class="{'menuLinkActive': currentLanguage === item.shortName}">
+                    {{ item.name }}
+                  </span>
+                </el-dropdown-item>
               </div>
             </template>
           </el-dropdown>
+          <!-- 亮暗色主題切換 -->
           <el-switch
             v-model="isDark"
             inline-prompt
-            style="margin-left: 20px; display: none;"
+            style="margin-left: 20px"
           >
             <template #active-action>
               <i class="bi bi-moon-fill" style="color:#313339"></i>
@@ -64,6 +66,22 @@
         </div>
       </template>
     </el-page-header>
+
+    <!-- 行動裝置版router menu -->
+    <el-drawer
+      v-model="drawer"
+      direction="ltr"
+    >
+      <el-menu :default-active="currentActive" style="height: 80vh;">
+        <el-menu-item
+          v-for="(r, index) in routerList" :key="index"
+          :index="index.toString()"
+          @click="router.push({ name: r.pathName })"
+        >
+          {{ r.name }}
+        </el-menu-item>
+      </el-menu>
+    </el-drawer>
   </div>
 </template>
 
@@ -74,6 +92,8 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const { t } = useI18n()
+const currentActive = ref('0')
+const drawer = ref(false)
 const isDark = useDark(
   {
     selector: 'body',
@@ -97,7 +117,6 @@ const routerList = ref([
     pathName: 'Contact'
   },
 ])
-const currentActive = ref('0')
 
 watch(() => router.currentRoute.value.name, (newValue) => {
   for(let i = 0; i < routerList.value.length; i++) {
@@ -108,17 +127,17 @@ watch(() => router.currentRoute.value.name, (newValue) => {
   }
 }, { deep: true })
 
-const currentLanguage = computed<string>(() => {
+const currentLanguage = computed<string | ''>(() => {
   return sessionStorage.getItem('language')!
 })
 
 // 多國語系切換
-function handleLanguageCommand (lang: string) {
+function handleLanguageCommand (lang: string | '') {
   sessionStorage.setItem('language', lang)
   location.reload()
 }
 
-function translateLanguage (language: string) {
+function translateLanguage (language: string | '') {
   switch (language) {
   case 'en':
     return 'EN'
@@ -167,6 +186,11 @@ onUnmounted(() => {
     padding: 5px 20px;
     background-color: var(--secondaryDarkColor) !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    i{
+      font-size: 24px;
+      color: black;
+    }
   }
   :deep .el-page-header__back {
     display: none; /* 隱藏返回按鈕 */
@@ -181,7 +205,7 @@ onUnmounted(() => {
   }
 
   .animation-container {
-    width: 200px;
+    width: 130px;
     height: 60px;
     margin-right: 30px;
     overflow: hidden;
@@ -220,22 +244,31 @@ onUnmounted(() => {
   }
 
   .routerMenu {
-    min-width: 300px !important;
-    max-width: 600px !important;
-    background-color: var(--secondaryDarkColor);
+    display: block;
+    max-width: 600px;
+    min-width: 300px;
+  }
+
+  .drawerButton{
+    display: none;
+  }
+
+  .el-menu {
+    background-color: var(--secondaryDarkColor) !important;
+    border: 1px transparent solid;
     border-bottom: 1px solid var(--secondaryDarkColor) !important;
   }
 
-  .routerMenu .el-menu-item.is-active {
+  .el-menu .el-menu-item.is-active {
     color: black !important;
     border-bottom: 2px solid  var(--secondaryLightColor)  !important;
   }
 
-  .routerMenu .el-menu-item {
+  .el-menu .el-menu-item {
     background-color: transparent !important;
     color: black !important;
   }
-  .routerMenu .el-menu-item:hover {
+  .el-menu .el-menu-item:hover {
     background-color: var(--secondaryLightColor) !important;
     color: black !important;
     border-radius: 5px;
@@ -264,19 +297,19 @@ onUnmounted(() => {
 
   @keyframes shoot {
     0% {
-      transform: translateX(170px) translateY(15px);
+      transform: translateX(100px) translateY(15px);
     }
     25% {
-      transform: translateX(100px) translateY(-60px);
+      transform: translateX(70px) translateY(-60px);
     }
     50% {
       transform: translateX(15px) translateY(15px);
     }
     75% {
-      transform: translateX(15px) translateY(100px);
+      transform: translateX(15px) translateY(70px);
     }
     100% {
-      transform: translateX(170px) translateY(15px);
+      transform: translateX(100px) translateY(15px);
     }
   }
 
@@ -291,19 +324,33 @@ onUnmounted(() => {
 
   @keyframes bounce {
     0% {
-      transform: translateX(170px) translateY(20px);
+      transform: translateX(90px) translateY(20px);
     }
     20% {
-      transform: translateX(170px) translateY(0px); /* 上升的高度 */
+      transform: translateX(90px) translateY(0px); /* 上升的高度 */
     }
     50% {
-      transform: translateX(170px) translateY(20px); /* 回到原始位置 */
+      transform: translateX(90px) translateY(20px); /* 回到原始位置 */
     }
     70% {
-      transform: translateX(170px) translateY(0px); /* 二次弹跳 */
+      transform: translateX(90px) translateY(0px); /* 二次弹跳 */
     }
     100% {
-      transform: translateX(170px) translateY(20px);
+      transform: translateX(90px) translateY(20px);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .routerMenu {
+      display: none;
+    }
+
+    .drawerButton{
+      display: block;
+    }
+
+    .animation-container{
+      display: none;
     }
   }
 </style>

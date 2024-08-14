@@ -39,3 +39,16 @@ $primaryBackgroundDarkColor: #000000;
   // --filterBarBackgroundColor:#242529;
   // --filterBarTextColor:#ffffff;
 }
+
+.el-drawer__header {
+  background-color: $secondaryDarkColor !important;
+  margin-bottom: -1px !important;
+}
+
+.el-drawer__wrapper {
+  background-color: $secondaryDarkColor !important;
+}
+
+.el-drawer__body {
+  background-color: $secondaryDarkColor !important;
+}

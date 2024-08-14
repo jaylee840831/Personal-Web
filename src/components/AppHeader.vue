@@ -20,10 +20,10 @@
           >
             <el-menu-item
               v-for="(r, index) in routerList" :key="index"
-              :index="index.toString()"
-              @click="router.push({ name: r.pathName })"
+              :index="r.routerName"
+              @click="router.push({ name: r.routerName })"
             >
-              {{ r.name }}
+              {{ r.title }}
             </el-menu-item>
           </el-menu>
         </div>
@@ -75,10 +75,10 @@
       <el-menu :default-active="currentActive" style="height: 80vh;">
         <el-menu-item
           v-for="(r, index) in routerList" :key="index"
-          :index="index.toString()"
-          @click="router.push({ name: r.pathName })"
+          :index="r.routerName"
+          @click="router.push({ name: r.routerName })"
         >
-          {{ r.name }}
+          {{ r.title }}
         </el-menu-item>
       </el-menu>
     </el-drawer>
@@ -92,7 +92,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const { t } = useI18n()
-const currentActive = ref('0')
+const currentActive = ref('Resume')
 const drawer = ref(false)
 const isDark = useDark(
   {
@@ -109,19 +109,19 @@ const languageList = ref([
 ])
 const routerList = ref([
   {
-    name: t('i18n.router.resume'),
-    pathName: 'Resume'
+    title: t('i18n.router.resume'),
+    routerName: 'Resume'
   },
   {
-    name: t('i18n.router.contact'),
-    pathName: 'Contact'
+    title: t('i18n.router.contact'),
+    routerName: 'Contact'
   },
 ])
 
 watch(() => router.currentRoute.value.name, (newValue) => {
   for(let i = 0; i < routerList.value.length; i++) {
-    if (routerList.value[i].pathName === newValue) {
-      currentActive.value = i.toString()
+    if (routerList.value[i].routerName === newValue) {
+      currentActive.value = newValue
       break
     }
   }
@@ -244,7 +244,7 @@ onUnmounted(() => {
   }
 
   .routerMenu {
-    display: block;
+    display: flex;
     max-width: 600px;
     min-width: 300px;
   }
@@ -255,8 +255,7 @@ onUnmounted(() => {
 
   .el-menu {
     background-color: var(--secondaryDarkColor) !important;
-    border: 1px transparent solid;
-    border-bottom: 1px solid var(--secondaryDarkColor) !important;
+    border: 1px transparent solid !important;
   }
 
   .el-menu .el-menu-item.is-active {
@@ -270,7 +269,6 @@ onUnmounted(() => {
   }
   .el-menu .el-menu-item:hover {
     background-color: var(--secondaryLightColor) !important;
-    color: black !important;
     border-radius: 5px;
   }
 
@@ -346,7 +344,7 @@ onUnmounted(() => {
     }
 
     .drawerButton{
-      display: block;
+      display: flex;
     }
 
     .animation-container{

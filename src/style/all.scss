@@ -23,6 +23,8 @@ $primaryBackgroundDarkColor: #000000;
   background-color: $primaryBackgroundColor;
   color: $textColor;
 
+  --primaryBackgroundColor: #ededed;
+  --textColor: #606266;
   --secondaryDarkColor: #F57C00;
   --secondaryLightColor: #F9AE66;
   // --filterBarBackgroundColor:#ffffff;
@@ -34,12 +36,15 @@ $primaryBackgroundDarkColor: #000000;
   background-color: $primaryBackgroundDarkColor;
   color: $textDarkColor;
 
+  --primaryBackgroundColor: #000000;
+  --textColor: #ffffff;
   --secondaryDarkColor: #F57C00;
   --secondaryLightColor: #F9AE66;
   // --filterBarBackgroundColor:#242529;
   // --filterBarTextColor:#ffffff;
 }
 
+// elememt ui 共用style
 .el-drawer__header {
   background-color: $secondaryDarkColor !important;
   margin-bottom: -1px !important;
@@ -51,4 +56,23 @@ $primaryBackgroundDarkColor: #000000;
 
 .el-drawer__body {
   background-color: $secondaryDarkColor !important;
+}
+
+.el-menu {
+  color: var(--textColor);
+  background-color: var(--primaryBackgroundColor) !important;
+  border-right: 1px solid  var(--textColor)  !important;
+}
+
+.el-menu .el-menu-item.is-active {
+  color: var(--secondaryDarkColor);
+  border-bottom: 2px solid  var(--secondaryLightColor)  !important;
+}
+
+.el-menu .el-menu-item {
+  color: var(--textColor);
+}
+.el-menu .el-menu-item:hover {
+  background-color: var(--secondaryLightColor) !important;
+  border-radius: 5px;
 }

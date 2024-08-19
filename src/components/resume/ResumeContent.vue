@@ -29,8 +29,8 @@
 
     for(let i = 0; i < resumeContents.length; i++) {
       if(resumeContents[i].id === newValue) {
-        // scrollContainer[0].scrollIntoView({ behavior: 'smooth', block: 'center' })
         scrollContainer[0].scrollTop = resumeContents[i].offsetTop
+        break
       }
     }
   }, { deep: true })

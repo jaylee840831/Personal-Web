@@ -51,6 +51,7 @@
 
   const handleSelect = (key: string, keyPath: string[]) => {
     currentSelect.value = key
+    console.log(keyPath)
   }
 
   const resumeGuideList = ref([
@@ -124,6 +125,8 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    padding-top: 10px;
+    margin-bottom: 10px;
   }
 
   .resumeContainer{

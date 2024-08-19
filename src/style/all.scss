@@ -9,7 +9,7 @@ html body{
 $primaryColor:#ffffff;
 $primaryDarkColor:#000000;
 // 副主色
-$secondaryDarkColor: #F57C00;
+$secondaryDarkColor: #0066FF;
 $secondaryLightColor: #F9AE66;
 // 文字色
 $textColor: #606266;
@@ -25,8 +25,9 @@ $primaryBackgroundDarkColor: #000000;
 
   --primaryBackgroundColor: #ededed;
   --textColor: #606266;
-  --secondaryDarkColor: #F57C00;
-  --secondaryLightColor: #F9AE66;
+  --secondaryDarkColor: #0066FF;
+  --highlightBottomColor: red;
+  --secondaryBackgroundColor: #ededed;
   // --filterBarBackgroundColor:#ffffff;
   // --filterBarTextColor:#606266;
 }
@@ -38,8 +39,9 @@ $primaryBackgroundDarkColor: #000000;
 
   --primaryBackgroundColor: #000000;
   --textColor: #ffffff;
-  --secondaryDarkColor: #F57C00;
-  --secondaryLightColor: #F9AE66;
+  --secondaryDarkColor: #0066FF;
+  --highlightBottomColor: red;
+  --secondaryBackgroundColor: #606266;
   // --filterBarBackgroundColor:#242529;
   // --filterBarTextColor:#ffffff;
 }
@@ -60,19 +62,43 @@ $primaryBackgroundDarkColor: #000000;
 
 .el-menu {
   color: var(--textColor);
-  background-color: var(--primaryBackgroundColor) !important;
+  background-color: var(--secondaryBackgroundColor) !important;
   border-right: 1px solid  var(--textColor)  !important;
 }
 
 .el-menu .el-menu-item.is-active {
   color: var(--secondaryDarkColor);
-  border-bottom: 2px solid  var(--secondaryLightColor)  !important;
 }
 
 .el-menu .el-menu-item {
   color: var(--textColor);
 }
+
 .el-menu .el-menu-item:hover {
-  background-color: var(--secondaryLightColor) !important;
-  border-radius: 5px;
+  color: var(--secondaryDarkColor);
+}
+
+.el-dropdown__popper{
+  border: none !important;
+}
+
+.el-dropdown-menu {
+  background-color: var(--secondaryBackgroundColor) !important;
+}
+
+.el-dropdown-menu__item {
+  color: var(--textColor) !important;
+}
+
+.el-dropdown-menu__item:hover {
+  color: var(--secondaryDarkColor) !important;
+}
+
+.el-dropdown-menu__item:focus {
+  background-color: transparent !important;
+}
+
+.el-dropdown__popper.el-popper[data-popper-placement^=bottom] .el-popper__arrow:before{
+  background-color: var(--secondaryBackgroundColor) !important;
+  border: none;
 }

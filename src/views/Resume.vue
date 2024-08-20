@@ -3,7 +3,7 @@
     <div class="resumeGuideBar">
       <el-menu
         default-active="about"
-        class="resumeMenu"
+        class="guideMenu"
         mode="vertical"
         :collapse="isCollapse"
         @select="handleSelect"
@@ -33,9 +33,11 @@
         </el-sub-menu>
       </el-menu>
     </div>
-    <div class="resumeContainer">
-      <ResumeContent :currentSelect="currentSelect" :resumeGuideList="resumeGuideList"/>
-    </div>
+    <ResumeContent
+      :currentSelect="currentSelect"
+      :resumeGuideList="resumeGuideList"
+      @scrollTarget="handleScrollTarget"
+    />
   </div>
 </template>
 
@@ -92,6 +94,10 @@
     }
   ])
 
+  function handleScrollTarget(target: string | '') {
+    console.log('Currently in view:', target)
+  }
+
   watch(() => isCollapse.value, (newValue: boolean) => {
     if (newValue) {
       arrowIcon.value = 'bi bi-chevron-double-right'
@@ -129,12 +135,7 @@
     margin-bottom: 10px;
   }
 
-  .resumeContainer{
-    width: 100%;
-    overflow-y: auto;
-  }
-
-  .resumeMenu {
+  .guideMenu {
     width: 100%;
     height: 100vh;
   }

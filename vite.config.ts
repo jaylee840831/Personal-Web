@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename)
 
 export default defineConfig({
   // base: process.env.VITE_ROOT_PATH, // 根目錄從指定的資料夾開始
-  // base: '/Resume',
+  base: '/Resume/',
   plugins: [
     vue(),
     AutoImport({

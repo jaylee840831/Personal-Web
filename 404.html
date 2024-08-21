@@ -1,0 +1,7 @@
+<script>
+  // 这个脚本将所有的 404 错误重定向到 index.html
+  const l = window.location;
+  const base = l.protocol + '//' + l.host + '/';
+  const path = l.pathname + l.search + l.hash;
+  window.location.replace(base + 'index.html#' + path);
+</script>

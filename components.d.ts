@@ -7,9 +7,16 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    About: typeof import('./src/components/resume/About.vue')['default']
+    Achievement: typeof import('./src/components/resume/Achievement.vue')['default']
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    Education: typeof import('./src/components/resume/Education.vue')['default']
+    Experience: typeof import('./src/components/resume/Experience.vue')['default']
+    Hobbit: typeof import('./src/components/resume/Hobbit.vue')['default']
+    Portfolio: typeof import('./src/components/resume/Portfolio.vue')['default']
     ResumeContent: typeof import('./src/components/resume/ResumeContent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Skill: typeof import('./src/components/resume/Skill.vue')['default']
   }
 }

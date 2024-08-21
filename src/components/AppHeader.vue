@@ -295,6 +295,7 @@ onUnmounted(() => {
 
     .drawerButton{
       display: flex;
+      cursor: pointer;
     }
   }
 

@@ -6,7 +6,6 @@
         class="guideMenu"
         mode="vertical"
         :collapse="isCollapse"
-        @select="handleSelect"
       >
         <!-- 收合menu -->
         <div class="collapseButtonContainer">
@@ -19,13 +18,19 @@
             src="images/user.png"
           />
         </div> -->
-        <el-menu-item v-for="(r, index) in resumeGuideList" :key="index" :index="r.name">
+        <el-menu-item
+          v-for="(r, index) in resumeGuideList"
+          :key="index"
+          :index="r.name"
+          :class="r.name"
+          @click="currentSelect = r.name"
+        >
           <img :src="r.imagePath"/>
           <template #title>
             {{ r.title }}
           </template>
         </el-menu-item>
-        <el-sub-menu index="8" style="visibility: hidden;">
+        <el-sub-menu index="empty" style="visibility: hidden;">
           <template #title>
             <img src="../../public/images/resume/about_me.png"/>
             <span>empty</span>
@@ -50,11 +55,6 @@
   const arrowIcon = ref('bi bi-chevron-double-left')
   const currentSelect = ref('about')
   // const headShotSize = ref(150)
-
-  const handleSelect = (key: string, keyPath: string[]) => {
-    currentSelect.value = key
-    console.log(keyPath)
-  }
 
   const resumeGuideList = ref([
     {
@@ -94,8 +94,19 @@
     }
   ])
 
+  function activeMenuItem(target: string | '') {
+    const guideMenu = document.getElementsByClassName('guideMenu')[0]
+    const firstLevelItems = guideMenu.querySelectorAll(':scope > .el-menu-item')
+
+    firstLevelItems.forEach(item => {
+      if(item.classList.contains(target)) item.classList.add('is-active')
+      else item.classList.remove('is-active')
+    })
+  }
+
   function handleScrollTarget(target: string | '') {
     console.log('Currently in view:', target)
+    activeMenuItem(target)
   }
 
   watch(() => isCollapse.value, (newValue: boolean) => {

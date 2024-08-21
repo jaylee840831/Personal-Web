@@ -5,15 +5,20 @@
       :id="item"
       class="resumeContentItem"
     >
-      {{ item }}
+      <component :is="currentComponent(item)"></component>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  // import { useI18n } from 'vue-i18n'
+  import About from './About.vue'
+  import Achievement from './Achievement.vue'
+  import Education from './Education.vue'
+  import Experience from './Experience.vue'
+  import Hobbit from './Hobbit.vue'
+  import Portfolio from './Portfolio.vue'
+  import Skill from './Skill.vue'
 
-  // const { t } = useI18n()
   const observer = ref<IntersectionObserver | null>(null)
 
   const props = defineProps({
@@ -30,16 +35,39 @@
   ])
 
   const contentList = ref([
-    "about",
-    "education",
-    "skill",
-    "experience",
-    "portfolio",
-    "achievement",
-    "hobbit"
+    'about',
+    'education',
+    'skill',
+    'experience',
+    'portfolio',
+    'achievement',
+    'hobbit'
   ])
 
-  watch(() => props.currentSelect, (newValue) => {
+  const components = {
+    About,
+    Achievement,
+    Education,
+    Experience,
+    Hobbit,
+    Portfolio,
+    Skill
+    }
+
+  function currentComponent(item: string | '') {
+    if(item === 'about') return components.About
+    else if(item === 'education') return components.Education
+    else if(item === 'skill') return components.Skill
+    else if(item === 'experience') return components.Experience
+    else if(item === 'portfolio') return components.Portfolio
+    else if(item === 'achievement') return components.Achievement
+    else if(item === 'hobbit') return components.Hobbit
+    else undefined
+
+    return undefined
+  }
+
+  watch(() => props.currentSelect, (newValue: string | undefined) => {
     const resumeContents = document.getElementsByClassName('resumeContentItem') as HTMLCollectionOf<HTMLDivElement>
     const scrollContainer = document.getElementsByClassName('resumeContent') as HTMLCollectionOf<HTMLDivElement>
 
@@ -65,7 +93,7 @@
       },
       {
         root: scrollContainer[0],
-        threshold: 1
+        threshold: 0.5
       }
     )
 
@@ -92,18 +120,14 @@
 <style lang="scss" scoped>
   .resumeContent{
     width: 100%;
-    height: 100vh;
     overflow-y: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
   }
 
   .resumeContentItem{
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     scroll-snap-align: center;
   }
 </style>

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Resume from '../views/Resume.vue'
 import Contact from '../views/Contact.vue'
 
@@ -19,13 +19,14 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Contact',
     component: Contact
   }
-];
+]
 
 const router = createRouter({
   // path需要跟vite.config.ts的base一致
   // history: createWebHistory(import.meta.env.VITE_ROOT_PATH),
-  history: createWebHistory('/Resume'),
+  // history: createWebHistory('/Resume'),
+  history: createWebHashHistory(),
   routes
-});
+})
 
 export default router

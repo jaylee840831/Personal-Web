@@ -27,7 +27,7 @@
         </el-menu-item>
         <el-sub-menu index="8" style="visibility: hidden;">
           <template #title>
-            <el-icon><location /></el-icon>
+            <img src="../../public/images/resume/about_me.png"/>
             <span>empty</span>
           </template>
         </el-sub-menu>

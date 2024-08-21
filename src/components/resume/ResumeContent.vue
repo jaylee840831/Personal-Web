@@ -25,7 +25,9 @@
     }
   })
 
-  const emits = defineEmits(['scrollTarget'])
+  const emits = defineEmits([
+    'scrollTarget'
+  ])
 
   const contentList = ref([
     "about",

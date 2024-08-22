@@ -73,7 +73,7 @@
 
     for(let i = 0; i < resumeContents.length; i++) {
       if(resumeContents[i].id === newValue) {
-        scrollContainer[0].scrollTop = resumeContents[i].offsetTop
+        scrollContainer[0].scrollTop = resumeContents[i].offsetTop - 50
         break
       }
     }
@@ -121,13 +121,11 @@
   .resumeContent{
     width: 100%;
     overflow-y: auto;
-    scroll-snap-type: y;
     scroll-behavior: smooth;
   }
 
   .resumeContentItem{
     width: 100%;
     height: 100%;
-    scroll-snap-align: center;
   }
 </style>

@@ -1,8 +1,7 @@
 <template>
   <div class="resumeDetail">
     <div class="header">
-      <!-- <h1>{{ t('i18n.about.welcomTitle') }}</h1> -->
-      <h1>歡迎來到我的網站aijfoiejfoiasjefoasjfoisajfosjaioejfosfj</h1>
+      <h1>{{ t('i18n.about.welcomTitle') }}</h1>
       <el-avatar
         :size="150"
         src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"

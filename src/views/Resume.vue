@@ -99,13 +99,19 @@
     const firstLevelItems = guideMenu.querySelectorAll(':scope > .el-menu-item')
 
     firstLevelItems.forEach(item => {
-      if(item.classList.contains(target)) item.classList.add('is-active')
-      else item.classList.remove('is-active')
+      if(item.classList.contains(target)) {
+        item.classList.add('isActiveMenuItem')
+      }
+      else {
+        item.classList.remove('is-active')
+        item.classList.remove('isActiveMenuItem')
+      }
     })
   }
 
   function handleScrollTarget(target: string | '') {
-    console.log('Currently in view:', target)
+    // console.log('Currently in view:', target)
+    currentSelect.value = ''
     activeMenuItem(target)
   }
 
@@ -124,7 +130,6 @@
 <style scoped>
   .resume{
     display: flex;
-    flex-direction: row;
 
     i{
       cursor: pointer;
@@ -136,6 +141,16 @@
   }
 
   .resumeGuideBar{
+  }
+
+  .isActiveMenuItem{
+    color: var(--secondaryDarkColor);
+    background: #ecf5ff !important;
+  }
+
+  .isActiveMenuItem:hover{
+    color: var(--secondaryDarkColor);
+    background: #ecf5ff !important;
   }
 
   .collapseButtonContainer{

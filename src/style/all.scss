@@ -68,7 +68,6 @@ $primaryBackgroundDarkColor: #000000;
 
 .el-menu .el-menu-item.is-active {
   color: var(--secondaryDarkColor);
-  background: #ecf5ff;
 }
 
 .el-menu .el-menu-item {
@@ -77,6 +76,7 @@ $primaryBackgroundDarkColor: #000000;
 
 .el-menu .el-menu-item:hover {
   color: var(--secondaryDarkColor);
+  background: transparent !important;
 }
 
 .el-dropdown__popper{

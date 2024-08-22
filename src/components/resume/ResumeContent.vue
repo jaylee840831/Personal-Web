@@ -89,7 +89,7 @@
           if (entry.isIntersecting) {
             emits('scrollTarget', entry.target.id)
           }
-        });
+        })
       },
       {
         root: scrollContainer[0],
@@ -121,7 +121,7 @@
   .resumeContent{
     width: 100%;
     overflow-y: auto;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y;
     scroll-behavior: smooth;
   }
 

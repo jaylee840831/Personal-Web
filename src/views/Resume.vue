@@ -12,13 +12,6 @@
         <div class="collapseButtonContainer">
           <i :class="arrowIcon" @click="isCollapse = !isCollapse"></i>
         </div>
-        <!-- 大頭照 -->
-        <!-- <div style="width: 100%; display: flex; justify-content: center;">
-          <el-avatar
-            :size="headShotSize"
-            src="images/user.png"
-          />
-        </div> -->
         <el-menu-item
           v-for="(r, index) in resumeGuideList"
           :key="index"
@@ -56,7 +49,6 @@
   const isCollapse = ref(false)
   const arrowIcon = ref('bi bi-chevron-double-left')
   const currentSelect = ref('about')
-  // const headShotSize = ref(150)
 
   const resumeGuideList = ref([
     {
@@ -120,11 +112,9 @@
   watch(() => isCollapse.value, (newValue: boolean) => {
     if (newValue) {
       arrowIcon.value = 'bi bi-chevron-double-right'
-      // headShotSize.value = 36
     }
     else {
       arrowIcon.value = 'bi bi-chevron-double-left'
-      // headShotSize.value = 150
     }
   }, { deep: true })
 </script>

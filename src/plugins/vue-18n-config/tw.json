@@ -16,6 +16,11 @@
       "portfolio": "作品集",
       "achievements": "成就",
       "hobbits": "興趣"
+    },
+    "about": {
+      "location": "台灣, 台北市",
+      "github": "https://github.com/jaylee840831",
+      "welcomeTitle": "我是李尹覺,歡迎來到我的網站!"
     }
   }
 }

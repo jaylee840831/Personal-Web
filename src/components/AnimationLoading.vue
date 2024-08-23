@@ -95,7 +95,7 @@
     background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0) 60%);
     transform: translate(-50%, -50%);
     // animation: expand 1s infinite;
-    animation: expand 2s infinite alternate;
+    animation: expand 1s infinite alternate;
   }
 
   @keyframes expand{

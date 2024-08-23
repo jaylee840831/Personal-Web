@@ -103,3 +103,20 @@ $primaryBackgroundDarkColor: #000000;
   background-color: var(--secondaryBackgroundColor) !important;
   border: none;
 }
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #3498db;
+}
+
+a:active {
+  color: #3498db;
+}

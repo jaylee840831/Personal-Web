@@ -16,6 +16,11 @@
       "portfolio": "Portfolio",
       "achievements": "Achievements",
       "hobbits": "Hobbits"
+    },
+    "about": {
+      "location": "Taipei, Taiwan",
+      "github": "https://github.com/jaylee840831",
+      "welcomeTitle": "I am Jasper, welcome to my website!"
     }
   }
 }

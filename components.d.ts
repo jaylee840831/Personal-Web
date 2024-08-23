@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     About: typeof import('./src/components/resume/About.vue')['default']
     Achievement: typeof import('./src/components/resume/Achievement.vue')['default']
+    AnimationLoading: typeof import('./src/components/AnimationLoading.vue')['default']
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
     Education: typeof import('./src/components/resume/Education.vue')['default']
     Experience: typeof import('./src/components/resume/Experience.vue')['default']

@@ -73,7 +73,7 @@
         <el-menu-item
           v-for="(r, index) in routerList" :key="index"
           :index="r.routerName"
-          @click="router.push({ name: r.routerName })"
+          @click="clickToRouterChange(r.routerName)"
         >
           {{ r.title }}
         </el-menu-item>
@@ -145,34 +145,10 @@ function translateLanguage (language: string | '') {
   }
 }
 
-// function handleClick (event: MouseEvent) {
-//   const buttons = document.getElementsByClassName('headerButton') as HTMLCollectionOf<HTMLDivElement>
-//   let clickTarget = false
-
-//   for(let i = 0; i < Array.from(buttons).length; i++) {
-//     const element = Array.from(buttons)[i]
-//     if (element.contains(event.target as Node)) {
-//       clickTarget = true
-//       break
-//     }
-//   }
-
-//   // console.log(clickTarget)
-
-//   if (clickTarget) {
-//     speed.value = 180
-//   } else {
-//     speed.value = 0
-//   }
-// }
-
-onMounted(() => {
-  // document.addEventListener('click', handleClick)
-})
-
-onUnmounted(() => {
-  // document.removeEventListener('click', handleClick)
-})
+function clickToRouterChange(routerName: string | '') {
+  drawer.value = false
+  router.push({ name: routerName })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -233,6 +209,7 @@ onUnmounted(() => {
 
   .drawerButton{
     display: none;
+    font-size: 24px !important;
   }
 
   .el-menu {
@@ -296,6 +273,7 @@ onUnmounted(() => {
     .drawerButton{
       display: flex;
       cursor: pointer;
+      font-size: 24px !important;
     }
   }
 

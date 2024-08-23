@@ -79,7 +79,7 @@
     }
   }, { deep: true })
 
-  // 開始監聽可視窗口當前元素
+  // 開始觀察指定元素接觸到父層或視窗
   function startListenViewPort() {
     const scrollContainer = document.getElementsByClassName('resumeContent') as HTMLCollectionOf<HTMLDivElement>
 
@@ -103,7 +103,7 @@
     })
   }
 
-  // 結束監聽可視窗口當前元素
+  // 結束觀察指定元素接觸到父層或視窗
   function endListenViewPort() {
     observer.value?.disconnect()
   }

@@ -1,5 +1,6 @@
 <template>
   <div class="resume">
+    <AnimationLoading />
     <div class="resumeGuideBar">
       <el-menu
         default-active="about"
@@ -48,6 +49,7 @@
 
 <script setup lang="ts">
   import { useI18n } from 'vue-i18n'
+  import AnimationLoading from '@/components/AnimationLoading.vue';
   import ResumeContent from '@/components/resume/ResumeContent.vue'
 
   const { t } = useI18n()

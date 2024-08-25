@@ -6,6 +6,11 @@
       class="resumeContentItem"
     >
       <component :is="currentComponent(item)"></component>
+      <div class="mPowerContainer">
+        <div class="stripe mPowerBlue"></div>
+        <div class="stripe mPowerDarkBlue"></div>
+        <div class="stripe mPowerRed"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -73,7 +78,7 @@
 
     for(let i = 0; i < resumeContents.length; i++) {
       if(resumeContents[i].id === newValue) {
-        scrollContainer[0].scrollTop = resumeContents[i].offsetTop - 50
+        scrollContainer[0].scrollTop = resumeContents[i].offsetTop - 100
         break
       }
     }
@@ -120,12 +125,14 @@
 <style lang="scss" scoped>
   .resumeContent{
     width: 100%;
+    height: 90vh;
     overflow-y: auto;
     scroll-behavior: smooth;
   }
 
   .resumeContentItem{
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 </style>

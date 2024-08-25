@@ -19,8 +19,22 @@
     },
     "about": {
       "location": "Taipei, Taiwan",
-      "github": "https://github.com/jaylee840831",
-      "welcomeTitle": "I am Jasper, welcome to my website!"
+      "welcomeTitle": "Welcome to my website!",
+      "name": "Jasper Li",
+      "jobTitle": "Full Stack Web Developer",
+      "introdueContent": "Hello everyone, my name is Jasper Li. As a web developer with two years of experience, I specialize in RWD (Responsive Web Design) and UI/UX design. I am also skilled in creating databases and integrating backend data using APIs. I am passionate about creating visually appealing and user-friendly websites. Let's work together to create stunning projects!"
+    },
+    "education": {
+      "title": "Education",
+      "klsh": "National Keelung Senior High School",
+      "cjcu": "Chang Jung Christian University",
+      "nkust": "National Kaohsiung University of Science and Technology",
+      "degreeOfKLSH": "General High School Program",
+      "degreeOfCJCU": "Bachelor's Degree in Information Management.",
+      "degreeOfNKUST": "Master's Degree in Computer and Communication Engineering.",
+      "contentOfKLSH": "",
+      "contentOfCJCU": "During my studies, I took courses in database design, algorithms, data structures, and mobile app development. I am interested in app development, and for my graduation project, I used Java to develop a Gomoku game Android app.\n\nStarting from my junior year, I spend a lot of time on the ITSA college programming competitions, where I honed my problem-solving skills and gradually became proficient in basic programming syntax.",
+      "contentOfNKUST": "When I was in my first year of master's degree, I won the Hackathon's Best Market Award for an app that detects road surface bumpy.\n\nWhen I was in the second year of my master's degree, I worked part-time as an Android App engineer in an electronics company. My work included UI interface development and Bluetooth connection to receive data.\n\nBefore graduation, I decided to become a website back-end development engineer as a career."
     }
   }
 }

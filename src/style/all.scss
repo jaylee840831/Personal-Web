@@ -26,6 +26,7 @@ $primaryBackgroundDarkColor: #000000;
   --primaryBackgroundColor: #ededed;
   --textColor: #606266;
   --secondaryDarkColor: #0066FF;
+  --secondaryLightColor: #6eb8ff;
   --highlightBottomColor: red;
   --secondaryBackgroundColor: #ededed;
   // --filterBarBackgroundColor:#ffffff;
@@ -40,6 +41,7 @@ $primaryBackgroundDarkColor: #000000;
   --primaryBackgroundColor: #000000;
   --textColor: #ffffff;
   --secondaryDarkColor: #0066FF;
+  --secondaryLightColor: #6eb8ff;
   --highlightBottomColor: red;
   --secondaryBackgroundColor: #606266;
   // --filterBarBackgroundColor:#242529;
@@ -104,6 +106,16 @@ $primaryBackgroundDarkColor: #000000;
   border: none;
 }
 
+.el-popper.is-customized {
+  padding: 6px 12px;
+  background-color: var(--secondaryBackgroundColor) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.el-popper.is-customized .el-popper__arrow::before {
+  background-color: var(--secondaryBackgroundColor) !important;
+}
+
 a {
   color: #3498db;
   text-decoration: none;
@@ -119,4 +131,31 @@ a:visited {
 
 a:active {
   color: #3498db;
+}
+
+.mPowerContainer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  .stripe {
+    width: 100%;
+    transform: skewX(-45deg); // x軸傾斜
+  }
+
+  .mPowerBlue {
+    background-color: #6eb8ff;
+  }
+
+  .mPowerDarkBlue {
+    background-color: #0033A0;
+  }
+
+  .mPowerRed {
+    background-color: #ff0000;
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="resumeDetail">
+  <div class="hobbit">
     hobbit
   </div>
 </template>
@@ -8,8 +8,16 @@
 </script>
 
 <style lang="scss" scoped>
-.resumeDetail{
+.hobbit{
   width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
 }
 </style>

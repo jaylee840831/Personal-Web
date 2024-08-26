@@ -52,6 +52,21 @@
       "developContent": "使用Android Studio開發Android app、Eclipse搭配Spring Boot開發網頁後端，目前主要使用VS Code搭配Vue3開發網頁前端。",
       "versionControl": "版本控制",
       "versionControlContent": "主要是用GitLab搭配Git與團隊協同作業。"
+    },
+    "experience": {
+      "title": "工作經歷",
+      "company1": "歐格電子",
+      "jobTitleOfCompany1": "Android app工程師",
+      "contentOfCompany1": "",
+      "company2": "思納捷科技",
+      "jobTitleOfCompany2": "Java後端工程師",
+      "contentOfCompany2": "",
+      "company3": "悅慶資訊",
+      "jobTitleOfCompany3": "Java後端工程師",
+      "contentOfCompany3": "",
+      "company4": "聰泰科技",
+      "jobTitleOfCompany4": "網頁前端工程師",
+      "contentOfCompany4": ""
     }
   }
 }

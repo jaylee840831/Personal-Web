@@ -93,6 +93,7 @@
       img{
         width: 80px;
         height: 80px;
+        background-color: white;
         border-radius: 50%;
         border: 5px lightgray solid;
       }
@@ -142,6 +143,19 @@
 
     h3{
       font-size: 16px;
+    }
+
+    .schoolEmblem{
+      display: flex;
+      flex-direction: column;
+
+      img{
+        width: 50px !important;
+        height: 50px !important;
+        background-color: white;
+        border-radius: 50%;
+        border: 5px lightgray solid;
+      }
     }
   }
 </style>

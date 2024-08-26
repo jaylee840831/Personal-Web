@@ -33,8 +33,25 @@
       "degreeOfCJCU": "資訊管理 學士",
       "degreeOfNKUST": "電腦與通訊工程 碩士",
       "contentOfKLSH": "",
-      "contentOfCJCU": "在學期間學習資料庫設計、演算法、資料結構、手機App程式開發等課程，其中對於App開發特別感興趣，畢業專題也使用Java開發五將棋遊戲Android App。\n大三開始積極參加ITSA大專程式競賽，透過解題培養寫程式的思路邏輯，並且逐漸熟練基礎語法。",
-      "contentOfNKUST": "碩一以路平偵測App獲得Smart高雄-校園創意市政提案競賽銀質獎、南科黑客松南台灣挑戰賽最佳市場獎以及中華電信IOT大平台應用競賽入圍全國決賽。\n\n碩二在學期間在歐格電子兼職擔任Android App工程師，工作內容包含UI介面、藍芽連接接收數據資料。\n\n畢業論文使用了Python開發籃球戰術辨識系統，該系統先以影像處理技術偵測球場的中場線自動剪輯出左右半場的比賽片段，再以影像辨識模型Yolov3框出球員位置並描繪出軌跡，最後戰術軌跡圖透過卷積神經網路訓練，得到戰術分類的結果。\n\n畢業之前我決定以網站後端工程師作為職涯發展目標。"
+      "contentOfCJCU": "在學期間學習資料庫設計、演算法、資料結構、手機App程式開發等課程，其中對於App開發特別感興趣，畢業專題也使用Java開發五將棋遊戲Android App。\n\n大三開始積極參加ITSA大專程式競賽，透過解題培養寫程式的思路邏輯，並且逐漸熟練基礎語法。",
+      "contentOfNKUST": "碩一以路平偵測App獲得Smart高雄-校園創意市政提案競賽銀質獎、南科黑客松南台灣挑戰賽最佳市場獎以及中華電信IOT大平台應用競賽入圍全國決賽。\n\n碩二在學期間在歐格電子兼職擔任Android App工程師，工作內容包含UI介面、藍芽連接接收數據資料。\n\n畢業論文使用了Python開發籃球戰術辨識系統，該系統先以影像處理技術偵測球場的中場線自動剪輯出左右半場的比賽片段，再以影像辨識模型Yolov3框出球員位置並描繪出軌跡，最後戰術軌跡圖透過卷積神經網路訓練，得到戰術分類的結果。\n\n畢業之前我決定以網頁後端工程師作為職涯發展目標。"
+    },
+    "skill": {
+      "title": "技能",
+      "frontend": "網頁前端開發",
+      "frontendContent": "能夠編寫VueJS、AngularJS、TypeScript和JavaScript。",
+      "backend": "網頁後端開發",
+      "backendContent": "以Java與Spring Boot編寫Web API，建立資料庫並且開設資料欄位。",
+      "rwd": "響應式佈局",
+      "rwdContent": "為不同裝置設計適應性佈局，透過選單樣式的調整、圖片的縮放比例、文字的放大及段落的排版對應來給使用者最佳的瀏覽體驗。",
+      "app": "手機App",
+      "appContent": "原生Android app開發。",
+      "gui": "圖形使用者介面開發",
+      "guiContent": "使用Tkinter與Python開發物件辨識系統。",
+      "develop": "開發工具",
+      "developContent": "使用Android Studio開發Android app、Eclipse搭配Spring Boot開發網頁後端，目前主要使用VS Code搭配Vue3開發網頁前端。",
+      "versionControl": "版本控制",
+      "versionControlContent": "主要是用GitLab搭配Git與團隊協同作業。"
     }
   }
 }

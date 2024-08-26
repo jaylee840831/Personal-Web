@@ -1,15 +1,127 @@
 <template>
-  <div class="resumeDetail">
-    skill
+  <div class="skill">
+    <div class="blockContainer">
+      <h1>{{ t('i18n.skill.title') }}</h1>
+    </div>
+    <div class="blockContainer">
+      <div class="infoContainer">
+        <div
+          class="infoItem"
+          v-for="(r, index) in infoList"
+          :key="index"
+          :index="index"
+        >
+          <div style="display: flex; align-items: center;">
+            <img :src="r.imagePath">
+            <h2>{{ r.title }}</h2>
+          </div>
+          <span style="max-width: 500px;">
+            {{ r.content }}
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import { useI18n } from 'vue-i18n'
+
+  const { t } = useI18n()
+  const infoList = ref([
+    {
+      imagePath: 'images/resume/frontend.png',
+      title: t('i18n.skill.frontend'),
+      content: t('i18n.skill.frontendContent')
+    },
+    {
+      imagePath: 'images/resume/backend.png',
+      title: t('i18n.skill.backend'),
+      content: t('i18n.skill.backendContent')
+    },
+    {
+      imagePath: 'images/resume/rwd.png',
+      title: t('i18n.skill.rwd'),
+      content: t('i18n.skill.rwdContent')
+    },
+    {
+      imagePath: 'images/resume/phone.png',
+      title: t('i18n.skill.app'),
+      content: t('i18n.skill.appContent')
+    },
+    {
+      imagePath: 'images/resume/gui.png',
+      title: t('i18n.skill.gui'),
+      content: t('i18n.skill.guiContent')
+    },
+    {
+      imagePath: 'images/resume/develop.png',
+      title: t('i18n.skill.develop'),
+      content: t('i18n.skill.developContent')
+    },
+    {
+      imagePath: 'images/resume/git.png',
+      title: t('i18n.skill.versionControl'),
+      content: t('i18n.skill.versionControlContent')
+    }
+  ])
 </script>
 
 <style lang="scss" scoped>
-.resumeDetail{
-  width: 100%;
-  height: 100%;
-}
+  .skill{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    word-break: break-word;
+  }
+
+  .blockContainer{
+    width: 90%;
+    display: flex;
+  }
+
+  .infoContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    .infoItem {
+      display: flex;
+      flex-direction: column;
+
+      img{
+        width: 28px;
+        height: 28px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  @media (max-width: 759px) {
+    h1{
+      font-size: 24px;
+    }
+
+    h2{
+      font-size: 18px;
+    }
+
+    h3{
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .infoContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 </style>

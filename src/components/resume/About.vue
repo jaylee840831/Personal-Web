@@ -66,43 +66,43 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+  import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
-const infoList = ref([
-  {
-    imagePath: 'images/resume/location.png',
-    hrefPath: '',
-    content: t('i18n.about.location')
-  },
-  {
-    imagePath: 'images/resume/about_me.png',
-    hrefPath: '',
-    content: t('i18n.about.name')
-  },
-  {
-    imagePath: 'images/resume/experience.png',
-    hrefPath: '',
-    content: t('i18n.about.jobTitle')
-  },
-  {
-    imagePath: 'images/resume/email.png',
-    hrefPath: 'mailto:lyinjue456852@gmail.com',
-    content: 'lyinjue456852@gmail.com'
-  }
-])
-const contactList = ref([
-  {
-    imagePath: 'images/resume/github.png',
-    hrefPath: 'https://github.com/jaylee840831',
-    content: 'Github'
-  },
-  {
-    imagePath: 'images/resume/linkedin.png',
-    hrefPath: 'https://www.linkedin.com/in/%E5%B0%B9%E8%A6%BA-%E6%9D%8E-32395b23a/',
-    content: 'Linkedin'
-  }
-])
+  const { t } = useI18n()
+  const infoList = ref([
+    {
+      imagePath: 'images/resume/location.png',
+      hrefPath: '',
+      content: t('i18n.about.location')
+    },
+    {
+      imagePath: 'images/resume/about_me.png',
+      hrefPath: '',
+      content: t('i18n.about.name')
+    },
+    {
+      imagePath: 'images/resume/experience.png',
+      hrefPath: '',
+      content: t('i18n.about.jobTitle')
+    },
+    {
+      imagePath: 'images/resume/email.png',
+      hrefPath: 'mailto:lyinjue456852@gmail.com',
+      content: 'lyinjue456852@gmail.com'
+    }
+  ])
+  const contactList = ref([
+    {
+      imagePath: 'images/resume/github.png',
+      hrefPath: 'https://github.com/jaylee840831',
+      content: 'Github'
+    },
+    {
+      imagePath: 'images/resume/linkedin.png',
+      hrefPath: 'https://www.linkedin.com/in/%E5%B0%B9%E8%A6%BA-%E6%9D%8E-32395b23a/',
+      content: 'Linkedin'
+    }
+  ])
 </script>
 
 <style lang="scss" scoped>

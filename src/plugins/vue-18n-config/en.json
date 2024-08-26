@@ -35,6 +35,23 @@
       "contentOfKLSH": "",
       "contentOfCJCU": "During my studies, I took courses in database design, algorithms, data structures, and mobile app development. I am interested in app development, and for my graduation project, I used Java to develop a Gomoku game Android app.\n\nStarting from my junior year, I spend a lot of time on the ITSA college programming competitions, where I honed my problem-solving skills and gradually became proficient in basic programming syntax.",
       "contentOfNKUST": "When I was in my first year of master's degree, I won the Hackathon's Best Market Award for an app that detects road surface bumpy.\n\nWhen I was in the second year of my master's degree, I worked part-time as an Android App engineer in an electronics company. My work included UI interface development and Bluetooth connection to receive data.\n\nBefore graduation, I decided to become a website back-end development engineer as a career."
+    },
+    "skill": {
+      "title": "Skill",
+      "frontend": "Front-End Web Development",
+      "frontendContent": "Able to code in VueJS, AngularJS, TypeScript and JavaScript.",
+      "backend": "Back-End Web Development",
+      "backendContent": "Able to code in Java, used Spring Boot to build Web API, create a database and set up data fields.",
+      "rwd": "Responsive Layouts",
+      "rwdContent": "Design adaptive layouts for different devices, giving users the best browsing experience.",
+      "app": "Mobile App",
+      "appContent": "Native Android app Development.",
+      "gui": "Graphical user interface(GUI)",
+      "guiContent": "Develop object recognition system using Tkinter and Python.",
+      "develop": "Development Tools",
+      "developContent": "Use Android Studio to develop Android apps, Eclipse with Spring Boot to develop web back-end, and currently mainly use VS Code with Vue3 to develop web front-end.",
+      "versionControl": "Version Control",
+      "versionControlContent": "Using GitLab and Git to collaborate with the team."
     }
   }
 }

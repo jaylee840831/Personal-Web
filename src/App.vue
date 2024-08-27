@@ -1,6 +1,6 @@
 <template>
-  <AppHeader></AppHeader>
-  <router-view></router-view>
+  <AppHeader style="width: 100vw !important;"></AppHeader>
+  <router-view style="width: 100vw !important;"></router-view>
 </template>
 
 <script setup lang="ts">

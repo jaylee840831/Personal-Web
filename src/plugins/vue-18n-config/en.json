@@ -52,6 +52,21 @@
       "developContent": "Use Android Studio to develop Android apps, Eclipse with Spring Boot to develop web back-end, and currently mainly use VS Code with Vue3 to develop web front-end.",
       "versionControl": "Version Control",
       "versionControlContent": "Using GitLab and Git to collaborate with the team."
+    },
+    "experience": {
+      "title": "工作經歷",
+      "company1": "歐格電子",
+      "jobTitleOfCompany1": "Android app工程師",
+      "contentOfCompany1": "",
+      "company2": "思納捷科技",
+      "jobTitleOfCompany2": "Java後端工程師",
+      "contentOfCompany2": "",
+      "company3": "悅慶資訊",
+      "jobTitleOfCompany3": "Java後端工程師",
+      "contentOfCompany3": "",
+      "company4": "聰泰科技",
+      "jobTitleOfCompany4": "網頁前端工程師",
+      "contentOfCompany4": ""
     }
   }
 }

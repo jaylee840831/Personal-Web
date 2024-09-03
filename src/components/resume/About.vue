@@ -38,12 +38,12 @@
         />
       </div>
     </div>
-    <div class="blockContainer">
+    <div class="blockContainer animateAbout">
       <span>
         {{ t('i18n.about.introdueContent') }}
       </span>
     </div>
-    <div class="blockContainer contactContainer">
+    <div class="blockContainer contactContainer animateAbout">
       <el-tooltip
         v-for="(r, index) in contactList"
         :key="index"
@@ -67,8 +67,10 @@
 
 <script setup lang="ts">
   import { useI18n } from 'vue-i18n'
+  import { useAllStore } from '@/store/all'
 
   const { t } = useI18n()
+  const allStore = useAllStore()
   const infoList = ref([
     {
       imagePath: 'images/resume/location.png',
@@ -103,6 +105,31 @@
       content: 'Linkedin'
     }
   ])
+
+  function addAnimation() {
+    const title = document.getElementsByClassName('welcomeContainer')
+    title[0].classList.add('showIn')
+
+    const blocks = document.getElementsByClassName('animateAbout')
+    for (let i = 0; i < blocks.length; i++) {
+      blocks[i].classList.add('fadeInFromRight')
+    }
+  }
+
+  function removeAnimation() {
+    const title = document.getElementsByClassName('welcomeContainer')
+    title[0].classList.remove('showIn')
+
+    const blocks = document.getElementsByClassName('animateAbout')
+    for (let i = 0; i < blocks.length; i++) {
+      blocks[i].classList.remove('fadeInFromRight')
+    }
+  }
+
+  watch(() => allStore.currentResumeScroll, (newValue: string) => {
+    if(newValue === 'about') addAnimation()
+    else removeAnimation()
+  }, { deep: true })
 </script>
 
 <style lang="scss" scoped>
@@ -114,6 +141,7 @@
     flex-wrap: wrap;
     padding-top: 100px;
     padding-bottom: 100px;
+    overflow-x: hidden !important;
 
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -165,6 +193,32 @@
     }
     img:hover{
       scale: (1.2);
+    }
+  }
+
+  .fadeInFromRight{
+    animation: animatefromRight 1s forwards;
+  }
+
+  @keyframes animatefromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .showIn{
+    animation: animateShowIn 3s forwards;
+  }
+
+  @keyframes animateShowIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 

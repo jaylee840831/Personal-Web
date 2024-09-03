@@ -4,7 +4,7 @@
       <h1>{{ t('i18n.education.title') }}</h1>
     </div>
     <div
-      class="blockContainer" 
+      class="blockContainer"
       v-for="(r, index) in schoolList"
       :key="index"
       :index="index"
@@ -20,7 +20,7 @@
         </div>
         <div class="subTitle">
           <img src="/images/resume/school.png">
-          <span>{{ r.subTitle }}</span>
+          <h3>{{ r.subTitle }}</h3>
         </div>
         <div v-if="r.content !== ''" style="padding-bottom: 50px;">
           <span>{{ r.content }}</span>
@@ -39,8 +39,11 @@
 
 <script setup lang="ts">
   import { useI18n } from 'vue-i18n'
+  import { useAllStore } from '@/store/all'
 
   const { t } = useI18n()
+  const allStore = useAllStore()
+
   const schoolList = ref([
     {
       imagePath: 'images/resume/klsh.png',
@@ -64,6 +67,27 @@
       content: t('i18n.education.contentOfNKUST')
     }
   ])
+
+  function addAnimation() {
+    const emblems = document.getElementsByClassName('schoolEmblem')
+    for (let i = 0; i < emblems.length; i++) {
+      const emblemImg = emblems[i].querySelectorAll('img')
+      emblemImg[0].classList.add('flip')
+    }
+  }
+
+  function removeAnimation() {
+    const emblems = document.getElementsByClassName('schoolEmblem')
+    for (let i = 0; i < emblems.length; i++) {
+      const emblemImg = emblems[i].querySelectorAll('img')
+      emblemImg[0].classList.remove('flip')
+    }
+  }
+
+  watch(() => allStore.currentResumeScroll, (newValue: string) => {
+    if(newValue === 'education') addAnimation()
+    else removeAnimation()
+  }, { deep: true })
 </script>
 
 <style lang="scss" scoped>
@@ -75,6 +99,7 @@
     flex-wrap: wrap;
     padding-top: 20px;
     padding-bottom: 50px;
+    overflow-x: hidden !important;
 
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -129,6 +154,22 @@
           height: 28px;
         }
       }
+    }
+  }
+
+  .flip{
+    animation: animateFlip 2s forwards;
+  }
+
+  @keyframes animateFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
     }
   }
 

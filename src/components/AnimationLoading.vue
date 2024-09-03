@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    v-model="isAnimationLoding"
+    v-model="isAnimationLoading"
     title=""
     :show-close="false"
     :close-on-click-modal="false"
@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-  const isAnimationLoding = ref(false)
+  const isAnimationLoading = ref(false)
   const currentCarIndex = ref(0)
   const currentCarImage = ref('')
   const carList = ref([
@@ -56,6 +56,12 @@
     }
   ])
 
+  const props = defineProps({
+    isLoading: {
+      type: Boolean
+    }
+  })
+
   async function setCarImage() {
     await nextTick()
     currentCarIndex.value = Math.floor(Math.random() * 4)
@@ -66,14 +72,12 @@
     rightLight[0].style.cssText = carList.value[currentCarIndex.value].rightLight
   }
 
-  onMounted(() => {
-    setCarImage()
-    isAnimationLoding.value = true
-
-    setTimeout(() => {
-      isAnimationLoding.value = false
-    }, 3000)
-  })
+  watch(() => props.isLoading, (newValue: boolean) => {
+    isAnimationLoading.value = newValue
+    if (newValue) {
+      setCarImage()
+    }
+  }, { deep: true })
 </script>
 
 <style lang="scss" scoped>
@@ -94,7 +98,6 @@
     height: 300%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0) 60%);
     transform: translate(-50%, -50%);
-    // animation: expand 1s infinite;
     animation: expand 1s infinite alternate;
   }
 

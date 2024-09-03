@@ -15,7 +15,7 @@
       "experience": "工作經歷",
       "portfolio": "作品集",
       "achievements": "成就",
-      "hobbits": "興趣"
+      "hobbies": "興趣"
     },
     "about": {
       "location": "台灣, 台北市",
@@ -45,28 +45,42 @@
       "rwd": "響應式佈局",
       "rwdContent": "為不同裝置設計適應性佈局，透過選單樣式的調整、圖片的縮放比例、文字的放大及段落的排版對應來給使用者最佳的瀏覽體驗。",
       "app": "手機App",
-      "appContent": "原生Android app開發。",
+      "appContent": "原生Android App開發。",
       "gui": "圖形使用者介面開發",
       "guiContent": "使用Tkinter與Python開發物件辨識系統。",
       "develop": "開發工具",
-      "developContent": "使用Android Studio開發Android app、Eclipse搭配Spring Boot開發網頁後端，目前主要使用VS Code搭配Vue3開發網頁前端。",
+      "developContent": "使用Android Studio開發Android App、Eclipse搭配Spring Boot開發網頁後端，目前主要使用VS Code搭配Vue3開發網頁前端。",
       "versionControl": "版本控制",
       "versionControlContent": "主要是用GitLab搭配Git與團隊協同作業。"
     },
     "experience": {
       "title": "工作經歷",
       "company1": "歐格電子",
-      "jobTitleOfCompany1": "Android app工程師",
-      "contentOfCompany1": "",
+      "jobTitleOfCompany1": "Android App工程師",
+      "contentOfCompany1": "開發運動手環的Android App，主要負責UI介面、透過藍芽連線手環上的感測器，將數據視覺化呈現在App。",
       "company2": "思納捷科技",
-      "jobTitleOfCompany2": "Java後端工程師",
-      "contentOfCompany2": "",
+      "jobTitleOfCompany2": "網頁後端工程師",
+      "contentOfCompany2": "主要負責IoT物聯網平台網頁，IoT裝置在客戶端場域監測的數據存入資料庫之後，由我編寫Web API，其中包含串接畫面要顯示的資料數據，以及使用者在網頁上控制裝置的開關及相關設定。",
       "company3": "悅慶資訊",
-      "jobTitleOfCompany3": "Java後端工程師",
-      "contentOfCompany3": "",
+      "jobTitleOfCompany3": "網頁後端工程師",
+      "contentOfCompany3": "經歷兩個專案，編寫查詢系統的報表匯出匯入以及資料驗證的Web API，在這段時間用過Angular調整前端畫面，開始對響應式網頁產生興趣並且利用下班時間自學。",
       "company4": "聰泰科技",
       "jobTitleOfCompany4": "網頁前端工程師",
-      "contentOfCompany4": ""
+      "contentOfCompany4": "主要負責影像擷取設備的網頁畫面，其中包含影像辨識結果的串流畫面、設備狀態即時監控、視覺化的戰情室圖表等等。\n\nRWD響應式網頁:\n幫助產品的網頁排版自適應顯示在電腦、平板、手機等裝置，優化使用者體驗感受。\n\nPWA(漸進式應用程式):\n提議PWA漸進式應用程式，使用者可以將網頁添加到行動裝置的主螢幕，像手機App一樣點開即可使用。漸進式應用程式的好處是使用者一樣可以接收推送通知，甚至在離線時使用，同時，開發者可以避免原生應用開發中的一些問題，例如需要為多個平台獨立開發、更新維護困難等，製作及維運成本均大幅下降。\n\n數據戰情室:\n物件偵測事件統計、警報次數與地區分布圖表。\n\n影像歷史回放:\n多個影像集合在同一頁面上，使用者能同時控制播放時間、倍速，點開單一畫面可以查看物件偵測的事件片段。\n\n地圖顯示影像裝置位置標記:\n在地圖上顯示標記的裝置地點，點擊標記點可以查看即時影像。"
+    },
+    "portfolio": {
+      "title": "作品集"
+    },
+    "hobbies": {
+      "title": "興趣與愛好",
+      "basketball": "籃球",
+      "basketballContent": "與朋友在公園打球，偶爾參加比賽，享受競技的樂趣。",
+      "hangOut": "聚會",
+      "hangOutContent": "與朋友聚餐聊天，玩桌遊、密室逃脫。",
+      "workout": "健身",
+      "workoutContent": "致力於身體健康，培養健康的生活方式。",
+      "coding": "寫程式",
+      "codingContent": "練習工作上會用到的技術，或是做Side Project。"
     }
   }
 }

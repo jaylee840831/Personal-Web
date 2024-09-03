@@ -6,7 +6,7 @@
     <div class="blockContainer">
       <div class="infoContainer">
         <div
-          class="infoItem"
+          class="infoItem infoItemOfSkill"
           v-for="(r, index) in infoList"
           :key="index"
           :index="index"
@@ -26,8 +26,11 @@
 
 <script setup lang="ts">
   import { useI18n } from 'vue-i18n'
+  import { useAllStore } from '@/store/all'
 
   const { t } = useI18n()
+  const allStore = useAllStore()
+
   const infoList = ref([
     {
       imagePath: 'images/resume/frontend.png',
@@ -65,6 +68,27 @@
       content: t('i18n.skill.versionControlContent')
     }
   ])
+
+  function addAnimation() {
+    const items = document.getElementsByClassName('infoItemOfSkill')
+    for (let i = 0; i < items.length; i++) {
+      if (i % 2 === 0) items[i].classList.add('fadeInFromLeft')
+      else items[i].classList.add('fadeInFromRight')
+    }
+  }
+
+  function removeAnimation() {
+    const items = document.getElementsByClassName('infoItemOfSkill')
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.remove('fadeInFromLeft')
+      items[i].classList.remove('fadeInFromRight')
+    }
+  }
+
+  watch(() => allStore.currentResumeScroll, (newValue: string) => {
+    if(newValue === 'skill') addAnimation()
+    else removeAnimation()
+  }, { deep: true })
 </script>
 
 <style lang="scss" scoped>
@@ -76,6 +100,7 @@
     flex-wrap: wrap;
     padding-top: 20px;
     padding-bottom: 50px;
+    overflow-x: hidden !important;
 
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -96,12 +121,39 @@
     .infoItem {
       display: flex;
       flex-direction: column;
+      padding-bottom: 20px;
 
       img{
         width: 28px;
         height: 28px;
         margin-right: 5px;
       }
+    }
+  }
+
+  .fadeInFromLeft{
+    animation: animatefromLeft 1s forwards;
+  }
+
+  @keyframes animatefromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .fadeInFromRight{
+    animation: animatefromRight 1s forwards;
+  }
+
+  @keyframes animatefromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 

@@ -17,13 +17,15 @@
 
 <script setup lang="ts">
   import About from './About.vue'
-  import Achievement from './Achievement.vue'
+  // import Achievement from './Achievement.vue'
   import Education from './Education.vue'
   import Experience from './Experience.vue'
   import Hobbit from './Hobbit.vue'
-  import Portfolio from './Portfolio.vue'
+  // import Portfolio from './Portfolio.vue'
   import Skill from './Skill.vue'
+  import { useAllStore } from '@/store/all'
 
+  const allStore = useAllStore()
   const observer = ref<IntersectionObserver | null>(null)
 
   const props = defineProps({
@@ -44,19 +46,19 @@
     'education',
     'skill',
     'experience',
-    'portfolio',
-    'achievement',
+    // 'portfolio',
+    // 'achievement',
     'hobbit'
   ])
 
   const components = {
     About,
-    Achievement,
     Education,
+    Skill,
     Experience,
-    Hobbit,
-    Portfolio,
-    Skill
+    // Portfolio,
+    // Achievement,
+    Hobbit
     }
 
   function currentComponent(item: string | '') {
@@ -64,8 +66,8 @@
     else if(item === 'education') return components.Education
     else if(item === 'skill') return components.Skill
     else if(item === 'experience') return components.Experience
-    else if(item === 'portfolio') return components.Portfolio
-    else if(item === 'achievement') return components.Achievement
+    // else if(item === 'portfolio') return components.Portfolio
+    // else if(item === 'achievement') return components.Achievement
     else if(item === 'hobbit') return components.Hobbit
     else undefined
 
@@ -93,12 +95,13 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             emits('scrollTarget', entry.target.id)
+            allStore.setResumeScroll(entry.target.id)
           }
         })
       },
       {
         root: scrollContainer[0],
-        threshold: 0.5
+        threshold: 0.2
       }
     )
 
@@ -134,5 +137,18 @@
     position: relative;
     width: 100%;
     height: auto;
+    // animation-name: example;
+    // animation-duration: 2s;
   }
+
+  // @keyframes example {
+  //   0% {
+  //     transform: translateX(-100%); /* 从屏幕左侧开始 */
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     transform: translateX(0); /* 移动到原始位置 */
+  //     opacity: 1;
+  //   }
+  // }
 </style>

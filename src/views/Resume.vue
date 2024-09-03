@@ -1,6 +1,6 @@
 <template>
   <div class="resume">
-    <AnimationLoading />
+    <AnimationLoading :isLoading="isAnimationLoding"/>
     <div class="resumeGuideBar">
       <el-menu
         default-active="about"
@@ -47,6 +47,7 @@
 
   const { t } = useI18n()
   const isCollapse = ref(false)
+  const isAnimationLoding = ref(false)
   const arrowIcon = ref('bi bi-chevron-double-left')
   const currentSelect = ref('about')
 
@@ -71,24 +72,24 @@
       title: t('i18n.resume.experience'),
       imagePath: 'images/resume/experience.png'
     },
-    {
-      name: 'portfolio',
-      title: t('i18n.resume.portfolio'),
-      imagePath: 'images/resume/portfolio.png'
-    },
-    {
-      name: 'achievement',
-      title: t('i18n.resume.achievements'),
-      imagePath: 'images/resume/achievement.png'
-    },
+    // {
+    //   name: 'portfolio',
+    //   title: t('i18n.resume.portfolio'),
+    //   imagePath: 'images/resume/portfolio.png'
+    // },
+    // {
+    //   name: 'achievement',
+    //   title: t('i18n.resume.achievements'),
+    //   imagePath: 'images/resume/achievement.png'
+    // },
     {
       name: 'hobbit',
-      title: t('i18n.resume.hobbits'),
+      title: t('i18n.resume.hobbies'),
       imagePath: 'images/resume/hobbit.png'
     }
   ])
 
-  function activeMenuItem(target: string | '') {
+  async function activeMenuItem(target: string | '') {
     const guideMenu = document.getElementsByClassName('guideMenu')[0]
     const firstLevelItems = guideMenu.querySelectorAll(':scope > .el-menu-item')
 
@@ -103,10 +104,10 @@
     })
   }
 
-  function handleScrollTarget(target: string | '') {
+  async function handleScrollTarget(target: string | '') {
     // console.log('Currently in view:', target)
     currentSelect.value = ''
-    activeMenuItem(target)
+    await activeMenuItem(target)
   }
 
   watch(() => isCollapse.value, (newValue: boolean) => {
@@ -117,6 +118,14 @@
       arrowIcon.value = 'bi bi-chevron-double-left'
     }
   }, { deep: true })
+
+  onMounted(() => {
+    isAnimationLoding.value = true
+
+    setTimeout(() => {
+      isAnimationLoding.value = false
+    }, 2000)
+  })
 </script>
 
 <style scoped>

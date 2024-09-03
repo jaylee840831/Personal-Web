@@ -257,20 +257,11 @@ function clickToRouterChange(routerName: string | '') {
   }
 
   @keyframes slideIn {
-    from {
-      right: 0;
+    0% {
+      transform: translateX(-100%);
     }
-    to {
-      right: 20%;
-    }
-  }
-
-  @keyframes showIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
+    100% {
+      transform: translateX(0);
     }
   }
 
@@ -296,7 +287,7 @@ function clickToRouterChange(routerName: string | '') {
       display: flex;
       justify-content: center;
       overflow: hidden;
-      animation: showIn 2s forwards;
+      animation: slideIn 2s forwards;
 
       .stripe {
         width: 70px;

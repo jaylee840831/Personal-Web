@@ -15,7 +15,7 @@
       "experience": "Experience",
       "portfolio": "Portfolio",
       "achievements": "Achievements",
-      "hobbits": "Hobbits"
+      "hobbies": "Hobbies"
     },
     "about": {
       "location": "Taipei, Taiwan",
@@ -33,20 +33,20 @@
       "degreeOfCJCU": "Bachelor's Degree in Information Management.",
       "degreeOfNKUST": "Master's Degree in Computer and Communication Engineering.",
       "contentOfKLSH": "",
-      "contentOfCJCU": "During my studies, I took courses in database design, algorithms, data structures, and mobile app development. I am interested in app development, and for my graduation project, I used Java to develop a Gomoku game Android app.\n\nStarting from my junior year, I spend a lot of time on the ITSA college programming competitions, where I honed my problem-solving skills and gradually became proficient in basic programming syntax.",
+      "contentOfCJCU": "During my studies, I took courses in database design, algorithms, data structures, and mobile app development. I am interested in app development, and for my graduation project, I used Java to develop a Gomoku game Android App.\n\nStarting from my junior year, I spend a lot of time on the ITSA college programming competitions, where I honed my problem-solving skills and gradually became proficient in basic programming syntax.",
       "contentOfNKUST": "When I was in my first year of master's degree, I won the Hackathon's Best Market Award for an app that detects road surface bumpy.\n\nWhen I was in the second year of my master's degree, I worked part-time as an Android App engineer in an electronics company. My work included UI interface development and Bluetooth connection to receive data.\n\nBefore graduation, I decided to become a website back-end development engineer as a career."
     },
     "skill": {
       "title": "Skill",
-      "frontend": "Front-End Web Development",
+      "frontend": "Frontend Web Development",
       "frontendContent": "Able to code in VueJS, AngularJS, TypeScript and JavaScript.",
-      "backend": "Back-End Web Development",
+      "backend": "Backend Web Development",
       "backendContent": "Able to code in Java, used Spring Boot to build Web API, create a database and set up data fields.",
       "rwd": "Responsive Layouts",
       "rwdContent": "Design adaptive layouts for different devices, giving users the best browsing experience.",
       "app": "Mobile App",
-      "appContent": "Native Android app Development.",
-      "gui": "Graphical user interface(GUI)",
+      "appContent": "Native Android App Development.",
+      "gui": "Graphical User Interface(GUI)",
       "guiContent": "Develop object recognition system using Tkinter and Python.",
       "develop": "Development Tools",
       "developContent": "Use Android Studio to develop Android apps, Eclipse with Spring Boot to develop web back-end, and currently mainly use VS Code with Vue3 to develop web front-end.",
@@ -54,19 +54,33 @@
       "versionControlContent": "Using GitLab and Git to collaborate with the team."
     },
     "experience": {
-      "title": "工作經歷",
-      "company1": "歐格電子",
-      "jobTitleOfCompany1": "Android app工程師",
-      "contentOfCompany1": "",
-      "company2": "思納捷科技",
-      "jobTitleOfCompany2": "Java後端工程師",
-      "contentOfCompany2": "",
-      "company3": "悅慶資訊",
-      "jobTitleOfCompany3": "Java後端工程師",
-      "contentOfCompany3": "",
-      "company4": "聰泰科技",
-      "jobTitleOfCompany4": "網頁前端工程師",
-      "contentOfCompany4": ""
+      "title": "Work Experience",
+      "company1": "Ahoku Electronic Company",
+      "jobTitleOfCompany1": "Android App Engineer",
+      "contentOfCompany1": "Developed an Android app for a fitness tracker, with primary responsibilities including UI design, connecting to the wristband's sensors via Bluetooth, and visualizing the data within the app.",
+      "company2": "InSynerger Technology",
+      "jobTitleOfCompany2": "Web Backend Engineer",
+      "contentOfCompany2": "Primarily responsible for the IoT platform webpage. After the data monitored by IoT devices at the client's site is stored in the database, I developed the Web API to connect the data to the front-end interface. Additionally, I enabled users to control the devices and configure settings through the webpage.",
+      "company3": "MACNET",
+      "jobTitleOfCompany3": "Web Backend Engineer",
+      "contentOfCompany3": "During two projects, I developed Web APIs for exporting/importing reports and data validation in a query system. During this time, I also worked with Angular to adjust the front-end interface, which sparked my interest in responsive web design. I then took the initiative to self-study in my free time after work.",
+      "company4": "Yuan Technology",
+      "jobTitleOfCompany4": "Web Frontend Engineer",
+      "contentOfCompany4": "Responsible for the web interface of video capture devices, including streaming of object recognition results, real-time monitoring of device status, and visualized dashboard charts.\n\nRWD (Responsive Web Design):\nEnhanced the product’s web layout to adapt seamlessly across devices like desktops, tablets, and smartphones, improving the user experience.\n\nPWA (Progressive Web App):\nProposed and implemented a Progressive Web App (PWA), allowing users to add the web application to their mobile device's home screen, making it accessible like a native app. The benefits of PWAs include receiving push notifications, functionality in offline mode, and avoiding some challenges of native app development, such as the need for independent development across multiple platforms, complicated updates, and maintenance, thus significantly reducing production and maintenance costs\n\nData Dashboard:\nCreated charts for object detection event statistics, alarm frequency, and regional distribution.\n\nVideo Playback:\nDeveloped a feature that allows users to view multiple video streams on a single page, control playback time and speed simultaneously, and view event clips of object detection by clicking on individual streams.\n\nMap Display of Device Locations:\nImplemented a map feature that shows the locations of devices with markers; users can click on a marker to view the live feed from the device."
+    },
+    "portfolio": {
+      "title": "Portfolio"
+    },
+    "hobbies": {
+      "title": "Hobbies & Interests",
+      "basketball": "Basketball",
+      "basketballContent": "Playing ball games with friends in the park, I occasionally participate in competitions and enjoy the joy of competition.",
+      "hangOut": "Hangout",
+      "hangOutContent": "Hang out with friends.",
+      "workout": "Weight Training",
+      "workoutContent": "Dedicating time to physical well-being.",
+      "coding": "Coding",
+      "codingContent": "Practicing the skills used at work or working on side projects."
     }
   }
 }

@@ -197,7 +197,7 @@
   }
 
   .fadeInFromRight{
-    animation: animatefromRight 1s forwards;
+    animation: animatefromRight 2s forwards;
   }
 
   @keyframes animatefromRight {

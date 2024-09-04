@@ -81,6 +81,21 @@
       "workoutContent": "致力於身體健康，培養健康的生活方式。",
       "coding": "寫程式",
       "codingContent": "練習工作上會用到的技術，或是做Side Project。"
+    },
+    "contact": {
+      "title": "聯繫我",
+      "name": "姓名",
+      "email": "Email",
+      "subject": "主題",
+      "message": "留言",
+      "submit": "送出",
+      "sendEmailSuccess": "發送信件成功",
+      "sendEmailError": "發送信件失敗"
+    },
+    "validation": {
+      "notEmpty": "不可為空",
+      "invalidFormat": "格式錯誤",
+      "stringLengthLimit2To45": "字元長度需在2~45之間"
     }
   }
 }

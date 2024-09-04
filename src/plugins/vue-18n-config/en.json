@@ -37,7 +37,7 @@
       "contentOfNKUST": "When I was in my first year of master's degree, I won the Hackathon's Best Market Award for an app that detects road surface bumpy.\n\nWhen I was in the second year of my master's degree, I worked part-time as an Android App engineer in an electronics company. My work included UI interface development and Bluetooth connection to receive data.\n\nBefore graduation, I decided to become a website back-end development engineer as a career."
     },
     "skill": {
-      "title": "Skill",
+      "title": "Skills",
       "frontend": "Frontend Web Development",
       "frontendContent": "Able to code in VueJS, AngularJS, TypeScript and JavaScript.",
       "backend": "Backend Web Development",
@@ -81,6 +81,21 @@
       "workoutContent": "Dedicating time to physical well-being.",
       "coding": "Coding",
       "codingContent": "Practicing the skills used at work or working on side projects."
+    },
+    "contact": {
+      "title": "Contact me",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit",
+      "sendEmailSuccess": "Send email successfully.",
+      "sendEmailError": "Send email failed"
+    },
+    "validation": {
+      "notEmpty": "Must not be empty",
+      "invalidFormat": "Invalid Format",
+      "stringLengthLimit2To45": "Length should be 2 to 45"
     }
   }
 }

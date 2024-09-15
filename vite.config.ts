@@ -36,12 +36,12 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', //啟動NetWork 本地ip
-    port: 8086,
+    port: 8080,
     proxy: {
       '/api': {
-        target: '',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        target: 'http://localhost:3000',
+        changeOrigin: true
+        // rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }

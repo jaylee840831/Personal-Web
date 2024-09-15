@@ -79,7 +79,7 @@
     const emblems = document.getElementsByClassName('companyEmblem')
     for (let i = 0; i < emblems.length; i++) {
       const emblemImg = emblems[i].querySelectorAll('img')
-      emblemImg[0].classList.add('flip')
+      emblemImg[0].classList.add('rotate')
     }
   }
 
@@ -87,7 +87,7 @@
     const emblems = document.getElementsByClassName('companyEmblem')
     for (let i = 0; i < emblems.length; i++) {
       const emblemImg = emblems[i].querySelectorAll('img')
-      emblemImg[0].classList.remove('flip')
+      emblemImg[0].classList.remove('rotate')
     }
   }
 
@@ -177,6 +177,19 @@
     }
     100% {
         transform: rotateY(360deg);
+    }
+  }
+
+  .rotate{
+    animation: animateRotate 2s linear forwards;
+  }
+
+  @keyframes animateRotate {
+    from {
+        transform: rotate(0deg); /* 从0度开始 */
+    }
+    to {
+        transform: rotate(360deg); /* 旋转到360度 */
     }
   }
 

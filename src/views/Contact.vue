@@ -185,7 +185,7 @@
     //註冊EmailJS取得以下id
     const serviceID = ''
     const templateID = ''
-    const userID = ''
+    const userID = '' // public key
     const sendTemplate = {
       from_name: '',
       to_name: '',

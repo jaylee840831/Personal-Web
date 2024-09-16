@@ -315,7 +315,18 @@
     if (localStorage.getItem('uuid')) {
       await updatePersonalMessage({
         text: msg.value,
-        date: new Date().toLocaleString()
+        date: new Date().toLocaleString(
+          'zh-TW', {
+            timeZone: 'Asia/Taipei', // 台灣標準時間
+            year: 'numeric',
+            month: 'long', // 使用 "short" 以顯示月份縮寫，如 "Jan" 或 "Feb"
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            weekday: 'long' // 使用 "short" 以顯示星期幾的縮寫，如 "Mon"
+          }
+        )
       })
       await sendMessage({
         uuid: localStorage.getItem('uuid') || '',

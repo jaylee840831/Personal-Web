@@ -287,7 +287,9 @@
     messagesContent.innerHTML +=
       `<div class="message"
         style="width:fit-content; text-align: right; background: #F0F0F0;
-        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
         margin: 20px 10px 20px auto;
         border:1px solid #ccc;
         -webkit-border-radius: 20px 20px 0 20px;
@@ -307,7 +309,9 @@
       `<img src="images/user.png" style="width: 80px; height:80px; border-radius: 50%"/>
       <div class="message"
         style="width:fit-content; text-align: left; background: #6eb8ff;
-          padding: 10px;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-bottom: 10px;
           margin: 20px auto 20px 10px;
           border:1px solid #ccc;
           -webkit-border-radius: 20px 20px 20px 0px;

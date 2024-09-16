@@ -182,12 +182,13 @@
 
   function sendEmail () {
     isAnimationLoding.value = true
-    const serviceID = 'service_g15ibnp'
-    const templateID = 'template_qz695bf'
-    const userID = '7fQp4vnmN6wtMC-S2'
+    //註冊EmailJS取得以下id
+    const serviceID = ''
+    const templateID = ''
+    const userID = ''
     const sendTemplate = {
       from_name: '',
-      to_name: '李尹覺',
+      to_name: '',
       message: ''
     }
 

@@ -285,9 +285,17 @@
   async function updatePersonalMessage(newText: { text: string; date: string }) {
     const messagesContent = document.querySelector('.messages-content') as HTMLInputElement
     messagesContent.innerHTML +=
-      `<div class="message message-personal" style="text-align: right;">
+      `<div class="message"
+        style="width:fit-content; text-align: right; background: #F0F0F0;
+        padding: 10px;
+        margin: 20px 10px 20px auto;
+        border:1px solid #ccc;
+        -webkit-border-radius: 20px 20px 0 20px;
+        -moz-border-radius: 20px 20px 0 20px;
+        border-radius: 20px 20px 0 20px;">
         ${newText.text}
       </div>`
+
     $('<div class="timestamp">' + newText.date + '</div>').appendTo($('.message:last'))
     // $('<div class="checkmark-sent-delivered">&check;</div>').appendTo($('.message:last'))
     // $('<div class="checkmark-read">&check;</div>').appendTo($('.message:last'))
@@ -296,8 +304,15 @@
   async function updateOtherMessage(newText: { text: string; date: string }) {
     const messagesContent = document.querySelector('.messages-content') as HTMLInputElement
     messagesContent.innerHTML +=
-      `<div class="message">
-        <img src="images/user.png" style="width: 80px; height:80px; border-radius: 50%"/>
+      `<img src="images/user.png" style="width: 80px; height:80px; border-radius: 50%"/>
+      <div class="message"
+        style="width:fit-content; text-align: left; background: #6eb8ff;
+          padding: 10px;
+          margin: 20px auto 20px 10px;
+          border:1px solid #ccc;
+          -webkit-border-radius: 20px 20px 20px 0px;
+          -moz-border-radius: 20px 20px 20px 0px;
+          border-radius: 20px 20px 20px 0px;">
         ${newText.text}
       </div>`
     $('<div class="timestamp">' + newText.date + '</div>').appendTo($('.message:last'))
@@ -588,6 +603,7 @@
       left: 0;
       height: 95%;
       width: 100%;
+      background: #fff;
       overflow-y: auto !important;
     }
     .message {
@@ -860,7 +876,7 @@
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 1);
     z-index: 10;
     box-shadow: 2px 10px 40px rgba(22,20,19,0.4);
     /*  transform: translateX(300px);*/

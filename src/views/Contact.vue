@@ -14,7 +14,7 @@
     <div class="blockContainer">
       <h1>{{ t('i18n.contact.title') }}</h1>
     </div>
-    <div class="blockContainer" style="padding-bottom: 30px;">
+    <div class="blockContainer" style="margin-bottom: 30px;">
       <h3>{{ t('i18n.contact.chatTitle') }}</h3>
       <div class="avenue-messenger">
         <div class="agent-face">
@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="blockContainer">
+    <div class="blockContainer" style="margin-bottom: 60px;">
       <h3>{{ t('i18n.contact.emailTitle') }}</h3>
       <el-form
         ref="formDom"
@@ -187,11 +187,13 @@
     const templateID = ''
     const userID = '' // public key
     const sendTemplate = {
+      subject: '',
       from_name: '',
       to_name: '',
       message: ''
     }
 
+    sendTemplate.subject = formData.value.subject
     sendTemplate.from_name = formData.value.name
     sendTemplate.message = formData.value.message
 
@@ -399,16 +401,13 @@
 
 <style lang="scss" scoped>
   .contact{
-    position: relative;
     width: 100%;
-    height: calc(100vh - 40px);
+    height: 90vh;
     overflow-y: auto;
+    scroll-behavior: smooth;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    padding-top: 20px;
-    padding-bottom: 50px;
 
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -418,6 +417,8 @@
 
   .blockContainer{
     width: 90%;
+    position: relative;
+    height: auto;
   }
 
   .blockContainer > h3{
@@ -791,7 +792,7 @@
       padding: 6px 10px;
       border-radius: 5px;
       outline: none!important;
-      transition: background .2s ease;
+      // transition: background .2s ease;
       cursor:pointer;
       &:hover {
         background: #fff;

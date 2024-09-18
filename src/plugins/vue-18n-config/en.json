@@ -2,7 +2,8 @@
   "i18n":{
     "router": {
       "resume": "Resume",
-      "contact": "Contact"
+      "contact": "Contact",
+      "portfolio": "Portfolio"
     },
     "language": {
       "en": "English",
@@ -69,7 +70,9 @@
       "contentOfCompany4": "Responsible for the web interface of video capture devices, including streaming of object recognition results, real-time monitoring of device status, and visualized dashboard charts.\n\nRWD (Responsive Web Design):\nEnhanced the product’s web layout to adapt seamlessly across devices like desktops, tablets, and smartphones, improving the user experience.\n\nPWA (Progressive Web App):\nProposed and implemented a Progressive Web App (PWA), allowing users to add the web application to their mobile device's home screen, making it accessible like a native app. The benefits of PWAs include receiving push notifications, functionality in offline mode, and avoiding some challenges of native app development, such as the need for independent development across multiple platforms, complicated updates, and maintenance, thus significantly reducing production and maintenance costs\n\nData Dashboard:\nCreated charts for object detection event statistics, alarm frequency, and regional distribution.\n\nVideo Playback:\nDeveloped a feature that allows users to view multiple video streams on a single page, control playback time and speed simultaneously, and view event clips of object detection by clicking on individual streams.\n\nMap Display of Device Locations:\nImplemented a map feature that shows the locations of devices with markers; users can click on a marker to view the live feed from the device.\n\nEcharts customization module:\nSecondary packaging of Echarts into js files, used in HTML or front-end framework to adjust Pie Chart, Line Chart, and Bar Chart parameters and draw the graph."
     },
     "portfolio": {
-      "title": "Portfolio"
+      "title": "Portfolio",
+      "ballmeet": "Ball Meet",
+      "ballmeetContent": "Friends who love basketball can chat and communicate on it, and can post game games, invite friends to enjoy the fun of sports."
     },
     "hobbies": {
       "title": "Hobbies & Interests",

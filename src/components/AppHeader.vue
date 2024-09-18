@@ -113,6 +113,10 @@ const routerList = ref([
     title: t('i18n.router.contact'),
     routerName: 'Contact'
   },
+  {
+    title: t('i18n.router.portfolio'),
+    routerName: 'Portfolio'
+  }
 ])
 
 watch(() => router.currentRoute.value.name, (newValue) => {
@@ -203,8 +207,8 @@ function clickToRouterChange(routerName: string | '') {
 
   .routerMenu {
     display: flex;
-    max-width: 600px;
-    min-width: 300px;
+    max-width: 700px;
+    min-width: 500px;
   }
 
   .drawerButton{
